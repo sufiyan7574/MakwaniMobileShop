@@ -1,0 +1,1586 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Makwani Mobile Shop | Ner Parsopant, Yavatmal</title>
+  <meta name="description" content="Ner Parsopant ki sabse bharosemand mobile shop. 2nd hand mobiles ₹5000 se kam, repairing, accessories aur back cover printing." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700;800&family=Hind:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --primary: #FF6B00;
+      --primary-dark: #e05d00;
+      --primary-light: #ff8c33;
+      --secondary: #1a1a2e;
+      --accent: #FFD700;
+      --accent2: #00d4aa;
+      --bg: #0d0d1a;
+      --bg2: #16213e;
+      --bg3: #1a1a2e;
+      --text: #f0f0f0;
+      --text-muted: #a0a0b8;
+      --card-bg: rgba(255,255,255,0.04);
+      --card-border: rgba(255,107,0,0.2);
+      --whatsapp: #25D366;
+      --radius: 16px;
+      --shadow: 0 8px 32px rgba(255,107,0,0.15);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Hind', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+
+    h1,h2,h3,h4 { font-family: 'Baloo 2', cursive; }
+
+    /* === ANIMATED BG STARS === */
+    .stars {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      pointer-events: none;
+      z-index: 0;
+      overflow: hidden;
+    }
+    .star {
+      position: absolute;
+      width: 2px; height: 2px;
+      background: rgba(255,255,255,0.5);
+      border-radius: 50%;
+      animation: twinkle var(--d, 3s) infinite ease-in-out;
+    }
+
+    @keyframes twinkle {
+      0%,100% { opacity: 0.2; transform: scale(1); }
+      50% { opacity: 1; transform: scale(1.5); }
+    }
+
+    /* === NAVBAR === */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 5%;
+      background: rgba(13,13,26,0.9);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(255,107,0,0.15);
+      transition: all 0.3s;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+
+    .nav-logo .logo-icon {
+      width: 44px; height: 44px;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      box-shadow: 0 4px 15px rgba(255,107,0,0.4);
+      animation: logoPulse 3s infinite;
+    }
+
+    @keyframes logoPulse {
+      0%,100% { box-shadow: 0 4px 15px rgba(255,107,0,0.4); }
+      50% { box-shadow: 0 4px 30px rgba(255,107,0,0.8); }
+    }
+
+    .nav-logo .logo-text {
+      font-family: 'Baloo 2', cursive;
+      font-weight: 800;
+      font-size: 1.2rem;
+      color: var(--text);
+      line-height: 1.1;
+    }
+    .nav-logo .logo-text span { color: var(--primary); }
+    .nav-logo .logo-sub { font-size: 0.7rem; color: var(--text-muted); font-family: 'Hind', sans-serif; }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      padding: 6px 12px;
+      border-radius: 8px;
+      transition: all 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--primary);
+      background: rgba(255,107,0,0.1);
+    }
+
+    .nav-cta {
+      background: var(--primary) !important;
+      color: white !important;
+      padding: 8px 18px !important;
+      border-radius: 10px !important;
+      font-weight: 600 !important;
+      box-shadow: 0 4px 15px rgba(255,107,0,0.3);
+    }
+
+    .nav-cta:hover {
+      background: var(--primary-dark) !important;
+      transform: translateY(-1px);
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 4px;
+    }
+    .hamburger span {
+      width: 24px; height: 2px;
+      background: var(--text);
+      border-radius: 2px;
+      transition: all 0.3s;
+    }
+
+    /* === HERO === */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 120px 5% 60px;
+      position: relative;
+      z-index: 1;
+      overflow: hidden;
+    }
+
+    .hero-glow {
+      position: absolute;
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(255,107,0,0.15) 0%, transparent 70%);
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+      animation: glowPulse 4s infinite;
+    }
+
+    @keyframes glowPulse {
+      0%,100% { opacity: 0.6; transform: translate(-50%, -50%) scale(1); }
+      50% { opacity: 1; transform: translate(-50%, -50%) scale(1.1); }
+    }
+
+    .hero-content {
+      text-align: center;
+      max-width: 800px;
+      animation: fadeUp 0.8s ease both;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,107,0,0.12);
+      border: 1px solid rgba(255,107,0,0.3);
+      color: var(--primary-light);
+      padding: 6px 16px;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+      animation: fadeUp 0.8s 0.1s ease both;
+    }
+
+    .hero-badge .dot {
+      width: 8px; height: 8px;
+      background: var(--accent2);
+      border-radius: 50%;
+      animation: blink 1.5s infinite;
+    }
+
+    @keyframes blink {
+      0%,100% { opacity: 1; }
+      50% { opacity: 0.2; }
+    }
+
+    .hero h1 {
+      font-size: clamp(2.2rem, 6vw, 4rem);
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 16px;
+      animation: fadeUp 0.8s 0.2s ease both;
+    }
+
+    .hero h1 .highlight {
+      color: var(--primary);
+      position: relative;
+    }
+
+    .hero h1 .highlight::after {
+      content: '';
+      position: absolute;
+      bottom: 2px; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--primary), var(--accent));
+      border-radius: 2px;
+    }
+
+    .hero-sub {
+      font-size: clamp(1rem, 2.5vw, 1.25rem);
+      color: var(--text-muted);
+      max-width: 600px;
+      margin: 0 auto 32px;
+      animation: fadeUp 0.8s 0.3s ease both;
+    }
+
+    .hero-sub strong { color: var(--accent); }
+
+    .hero-btns {
+      display: flex;
+      gap: 14px;
+      justify-content: center;
+      flex-wrap: wrap;
+      animation: fadeUp 0.8s 0.4s ease both;
+      margin-bottom: 50px;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      color: white;
+      padding: 14px 28px;
+      border-radius: 12px;
+      font-size: 1rem;
+      font-weight: 700;
+      text-decoration: none;
+      box-shadow: 0 6px 25px rgba(255,107,0,0.35);
+      transition: all 0.3s;
+      font-family: 'Baloo 2', cursive;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 35px rgba(255,107,0,0.5);
+    }
+
+    .btn-wa {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: linear-gradient(135deg, var(--whatsapp), #128C7E);
+      color: white;
+      padding: 14px 28px;
+      border-radius: 12px;
+      font-size: 1rem;
+      font-weight: 700;
+      text-decoration: none;
+      box-shadow: 0 6px 25px rgba(37,211,102,0.3);
+      transition: all 0.3s;
+      font-family: 'Baloo 2', cursive;
+    }
+
+    .btn-wa:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 35px rgba(37,211,102,0.5);
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 30px;
+      justify-content: center;
+      flex-wrap: wrap;
+      animation: fadeUp 0.8s 0.5s ease both;
+    }
+
+    .stat-item {
+      text-align: center;
+    }
+
+    .stat-num {
+      font-family: 'Baloo 2', cursive;
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: var(--primary);
+    }
+
+    .stat-label {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .hero-phone-anim {
+      position: absolute;
+      right: 5%;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 8rem;
+      animation: floatPhone 3s ease-in-out infinite;
+      opacity: 0.07;
+      pointer-events: none;
+    }
+
+    @keyframes floatPhone {
+      0%,100% { transform: translateY(-50%) rotate(-5deg); }
+      50% { transform: translateY(-55%) rotate(5deg); }
+    }
+
+    /* === MARQUEE === */
+    .marquee-wrap {
+      background: linear-gradient(90deg, var(--primary), #ff8c33, var(--accent), var(--primary));
+      background-size: 300%;
+      animation: gradShift 4s infinite linear;
+      overflow: hidden;
+      padding: 10px 0;
+      position: relative;
+      z-index: 1;
+    }
+
+    @keyframes gradShift {
+      0% { background-position: 0%; }
+      100% { background-position: 300%; }
+    }
+
+    .marquee-inner {
+      display: flex;
+      gap: 0;
+      animation: marqueeScroll 20s linear infinite;
+      white-space: nowrap;
+    }
+
+    .marquee-inner span {
+      font-family: 'Baloo 2', cursive;
+      font-weight: 700;
+      font-size: 0.9rem;
+      color: white;
+      padding: 0 30px;
+    }
+
+    .marquee-inner .dot-sep { color: rgba(255,255,255,0.5); }
+
+    @keyframes marqueeScroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    /* === SECTIONS === */
+    section {
+      padding: 80px 5%;
+      position: relative;
+      z-index: 1;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .section-tag {
+      display: inline-block;
+      background: rgba(255,107,0,0.12);
+      color: var(--primary-light);
+      padding: 4px 14px;
+      border-radius: 50px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+      border: 1px solid rgba(255,107,0,0.2);
+    }
+
+    .section-title {
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 800;
+      color: var(--text);
+      line-height: 1.2;
+      margin-bottom: 12px;
+    }
+
+    .section-title span { color: var(--primary); }
+
+    .section-desc {
+      color: var(--text-muted);
+      font-size: 1rem;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    /* === SERVICES GRID === */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .service-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius);
+      padding: 28px 24px;
+      transition: all 0.35s ease;
+      cursor: default;
+      position: relative;
+      overflow: hidden;
+      backdrop-filter: blur(10px);
+    }
+
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--primary), var(--accent));
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.35s;
+    }
+
+    .service-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(255,107,0,0.5);
+      box-shadow: var(--shadow);
+    }
+
+    .service-card:hover::before { transform: scaleX(1); }
+
+    .service-icon {
+      width: 56px; height: 56px;
+      background: linear-gradient(135deg, rgba(255,107,0,0.2), rgba(255,107,0,0.05));
+      border: 1px solid rgba(255,107,0,0.25);
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 26px;
+      margin-bottom: 16px;
+    }
+
+    .service-card h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: var(--text);
+    }
+
+    .service-card p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    .service-badge {
+      display: inline-block;
+      background: rgba(255,215,0,0.15);
+      border: 1px solid rgba(255,215,0,0.3);
+      color: var(--accent);
+      padding: 3px 10px;
+      border-radius: 50px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      margin-top: 12px;
+    }
+
+    /* === BRANDS === */
+    .brands-section { background: var(--bg2); }
+
+    .brands-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      justify-content: center;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .brand-chip {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 50px;
+      padding: 10px 20px;
+      font-family: 'Baloo 2', cursive;
+      font-weight: 700;
+      font-size: 1rem;
+      transition: all 0.3s;
+      cursor: default;
+    }
+
+    .brand-chip:hover {
+      background: rgba(255,107,0,0.12);
+      border-color: var(--primary);
+      transform: scale(1.05);
+      color: var(--primary);
+    }
+
+    .brand-chip .brand-emoji { font-size: 1.4rem; }
+
+    /* === PRICE BANNER === */
+    .price-banner {
+      background: linear-gradient(135deg, var(--primary) 0%, #c94b00 100%);
+      border-radius: 20px;
+      padding: 50px 40px;
+      text-align: center;
+      max-width: 900px;
+      margin: 0 auto;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .price-banner::before {
+      content: '📱';
+      position: absolute;
+      font-size: 180px;
+      opacity: 0.07;
+      right: -20px; bottom: -30px;
+      line-height: 1;
+    }
+
+    .price-banner h2 {
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 800;
+      color: white;
+      margin-bottom: 12px;
+    }
+
+    .price-banner h2 .big-price {
+      font-size: clamp(2.5rem, 7vw, 4.5rem);
+      display: block;
+      color: var(--accent);
+    }
+
+    .price-banner p {
+      color: rgba(255,255,255,0.85);
+      font-size: 1.05rem;
+      margin-bottom: 24px;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .price-features {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: center;
+      margin-bottom: 28px;
+    }
+
+    .price-feature-chip {
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.25);
+      color: white;
+      padding: 6px 16px;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+
+    /* === WEEKLY STOCK === */
+    .weekly-section { background: var(--bg3); }
+
+    .weekly-card {
+      background: linear-gradient(135deg, rgba(0,212,170,0.08), rgba(0,212,170,0.02));
+      border: 1px solid rgba(0,212,170,0.25);
+      border-radius: 20px;
+      padding: 40px;
+      max-width: 700px;
+      margin: 0 auto;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .weekly-card::after {
+      content: '🔄';
+      position: absolute;
+      font-size: 120px;
+      opacity: 0.05;
+      top: -20px; right: -20px;
+    }
+
+    .weekly-card h3 {
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: var(--accent2);
+      margin-bottom: 12px;
+    }
+
+    .weekly-card p {
+      color: var(--text-muted);
+      font-size: 1rem;
+      margin-bottom: 20px;
+    }
+
+    .weekly-timer {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      margin-bottom: 24px;
+    }
+
+    .timer-box {
+      background: rgba(0,212,170,0.1);
+      border: 1px solid rgba(0,212,170,0.3);
+      border-radius: 12px;
+      padding: 12px 18px;
+      text-align: center;
+    }
+
+    .timer-num {
+      font-family: 'Baloo 2', cursive;
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--accent2);
+      line-height: 1;
+    }
+
+    .timer-label {
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* === ACCESSORIES === */
+    .accessories-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .acc-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius);
+      padding: 24px 16px;
+      text-align: center;
+      transition: all 0.3s;
+    }
+
+    .acc-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--primary);
+      box-shadow: var(--shadow);
+    }
+
+    .acc-emoji {
+      font-size: 2.8rem;
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .acc-card h4 {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .acc-card p {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+
+    .acc-tag {
+      display: inline-block;
+      background: rgba(255,107,0,0.12);
+      color: var(--primary-light);
+      padding: 2px 10px;
+      border-radius: 50px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      margin-top: 8px;
+    }
+
+    /* === WHY US === */
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 20px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .why-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius);
+      padding: 28px 22px;
+      text-align: center;
+      transition: all 0.3s;
+    }
+
+    .why-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(255,107,0,0.4);
+    }
+
+    .why-num {
+      font-family: 'Baloo 2', cursive;
+      font-size: 3rem;
+      font-weight: 800;
+      color: rgba(255,107,0,0.2);
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+
+    .why-card h4 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .why-card p {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+    }
+
+    /* === TESTIMONIALS === */
+    .testimonials-section { background: var(--bg2); }
+
+    .testi-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+      gap: 20px;
+      max-width: 950px;
+      margin: 0 auto;
+    }
+
+    .testi-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius);
+      padding: 24px;
+      transition: all 0.3s;
+    }
+
+    .testi-card:hover {
+      border-color: rgba(255,107,0,0.35);
+      transform: translateY(-3px);
+    }
+
+    .testi-stars {
+      color: var(--accent);
+      font-size: 1rem;
+      margin-bottom: 10px;
+      letter-spacing: 2px;
+    }
+
+    .testi-text {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      font-style: italic;
+      margin-bottom: 14px;
+      line-height: 1.55;
+    }
+
+    .testi-author {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .testi-avatar {
+      width: 38px; height: 38px;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 0.9rem;
+    }
+
+    .testi-name {
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+
+    .testi-loc {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    /* === CONTACT === */
+    .contact-section {
+      background: linear-gradient(180deg, var(--bg) 0%, var(--bg2) 100%);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    @media (max-width: 640px) {
+      .contact-grid { grid-template-columns: 1fr; }
+    }
+
+    .contact-info { }
+
+    .contact-info h3 {
+      font-size: 1.6rem;
+      font-weight: 800;
+      margin-bottom: 20px;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      margin-bottom: 20px;
+    }
+
+    .contact-icon {
+      width: 44px; height: 44px;
+      min-width: 44px;
+      background: rgba(255,107,0,0.12);
+      border: 1px solid rgba(255,107,0,0.25);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+    }
+
+    .contact-item-text .label {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .contact-item-text .value {
+      font-weight: 600;
+      font-size: 0.97rem;
+      color: var(--text);
+    }
+
+    .contact-item-text .value a {
+      color: var(--primary-light);
+      text-decoration: none;
+    }
+
+    .contact-ctas {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .contact-cta-card {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      text-decoration: none;
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius);
+      padding: 16px 20px;
+      transition: all 0.3s;
+    }
+
+    .contact-cta-card:hover {
+      transform: translateX(6px);
+      border-color: var(--primary);
+    }
+
+    .contact-cta-card.wa-card:hover { border-color: var(--whatsapp); }
+
+    .cta-card-icon {
+      width: 48px; height: 48px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      flex-shrink: 0;
+    }
+
+    .cta-card-icon.phone-bg { background: rgba(255,107,0,0.15); }
+    .cta-card-icon.wa-bg { background: rgba(37,211,102,0.15); }
+    .cta-card-icon.insta-bg { background: rgba(225,48,108,0.15); }
+
+    .cta-card-text .cta-label {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .cta-card-text .cta-val {
+      font-weight: 700;
+      font-size: 0.97rem;
+      color: var(--text);
+    }
+
+    /* === FLOATING WA BUTTON === */
+    .float-wa {
+      position: fixed;
+      bottom: 28px; right: 24px;
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: linear-gradient(135deg, var(--whatsapp), #128C7E);
+      color: white;
+      text-decoration: none;
+      padding: 14px 20px;
+      border-radius: 50px;
+      font-family: 'Baloo 2', cursive;
+      font-weight: 700;
+      font-size: 0.95rem;
+      box-shadow: 0 6px 30px rgba(37,211,102,0.5);
+      animation: floatWA 3s ease-in-out infinite;
+    }
+
+    .float-wa:hover {
+      transform: scale(1.06);
+      box-shadow: 0 8px 40px rgba(37,211,102,0.7);
+    }
+
+    @keyframes floatWA {
+      0%,100% { transform: translateY(0); box-shadow: 0 6px 30px rgba(37,211,102,0.5); }
+      50% { transform: translateY(-5px); box-shadow: 0 12px 40px rgba(37,211,102,0.65); }
+    }
+
+    .float-wa .wa-icon { font-size: 1.4rem; }
+
+    .float-wa .wa-pulse {
+      position: absolute;
+      top: -4px; right: -4px;
+      width: 14px; height: 14px;
+      background: var(--accent);
+      border-radius: 50%;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); opacity: 1; }
+      70% { transform: scale(2.2); opacity: 0; }
+      100% { transform: scale(1); opacity: 0; }
+    }
+
+    /* === FOOTER === */
+    footer {
+      background: var(--secondary);
+      border-top: 1px solid rgba(255,107,0,0.15);
+      padding: 40px 5% 24px;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .footer-logo {
+      font-family: 'Baloo 2', cursive;
+      font-size: 1.5rem;
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+
+    .footer-logo span { color: var(--primary); }
+
+    .footer-tagline {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      margin-bottom: 20px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 16px;
+    }
+
+    .footer-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.88rem;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover { color: var(--primary); }
+
+    .footer-copy {
+      color: var(--text-muted);
+      font-size: 0.8rem;
+      border-top: 1px solid rgba(255,255,255,0.05);
+      padding-top: 16px;
+      margin-top: 8px;
+    }
+
+    /* === MOBILE MENU === */
+    @media (max-width: 768px) {
+      .nav-links {
+        position: fixed;
+        top: 0; right: -100%;
+        width: 75%;
+        height: 100vh;
+        background: var(--bg2);
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 80px 30px 30px;
+        gap: 4px;
+        transition: right 0.35s ease;
+        border-left: 1px solid var(--card-border);
+        z-index: 999;
+      }
+
+      .nav-links.open { right: 0; }
+
+      .nav-links a {
+        font-size: 1.05rem;
+        padding: 10px 14px;
+        width: 100%;
+      }
+
+      .hamburger { display: flex; }
+      .hero-phone-anim { display: none; }
+
+      .price-banner { padding: 36px 24px; }
+      .weekly-card { padding: 30px 20px; }
+    }
+
+    /* === SCROLL ANIMATIONS === */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+    .reveal-delay-4 { transition-delay: 0.4s; }
+  </style>
+</head>
+<body>
+
+<!-- ANIMATED STARS -->
+<div class="stars" id="stars"></div>
+
+<!-- FLOATING WHATSAPP BUTTON -->
+<a href="https://wa.me/918600818634?text=Namaste!%20Mujhe%20mobile%20ke%20baare%20mein%20puchna%20tha." class="float-wa" target="_blank" rel="noopener">
+  <div class="wa-pulse"></div>
+  <span class="wa-icon">💬</span>
+  <span>WhatsApp Karo</span>
+</a>
+
+<!-- NAVBAR -->
+<nav id="navbar">
+  <a href="#" class="nav-logo">
+    <div class="logo-icon">📱</div>
+    <div>
+      <div class="nav-logo logo-text">Makwani <span>Mobile</span></div>
+      <div class="nav-logo logo-sub">Ner Parsopant, Yavatmal</div>
+    </div>
+  </a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#phones">Phones</a></li>
+    <li><a href="#accessories">Accessories</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="https://wa.me/918600818634?text=Namaste!%20Mujhe%20mobile%20ke%20baare%20mein%20puchna%20tha." target="_blank" class="nav-cta">📞 Abhi Puchho</a></li>
+  </ul>
+  <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-glow"></div>
+  <div class="hero-phone-anim">📱</div>
+  <div class="hero-content">
+    <div class="hero-badge">
+      <div class="dot"></div>
+      Ner Parsopant ka #1 Mobile Store
+    </div>
+    <h1>
+      Seedha <span class="highlight">Budget</span> Mein<br />
+      Best Mobile Milega!
+    </h1>
+    <p class="hero-sub">
+      2nd Hand Premium Mobiles <strong>₹5000 se kam</strong> mein — iPhone, Samsung, OnePlus aur bahut kuch. Repairing, Accessories, Back Printing — sab ek jagah!
+    </p>
+    <div class="hero-btns">
+      <a href="#phones" class="btn-primary">📱 Phones Dekho</a>
+      <a href="https://wa.me/918600818634?text=Namaste!%20Kya%20koi%20second%20hand%20mobile%20available%20hai?" target="_blank" class="btn-wa">💬 WhatsApp pe Puchho</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-item">
+        <div class="stat-num">500+</div>
+        <div class="stat-label">Khush Customers</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">₹999</div>
+        <div class="stat-label">Repairing Se Shuru</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">7 Din</div>
+        <div class="stat-label">Naye Stock Har Hafte</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">100%</div>
+        <div class="stat-label">Bharosa Guaranteed</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-wrap">
+  <div class="marquee-inner">
+    <span>📱 Second Hand Mobiles</span><span class="dot-sep">•</span>
+    <span>🔧 Mobile Repairing</span><span class="dot-sep">•</span>
+    <span>🎧 Headphones</span><span class="dot-sep">•</span>
+    <span>🔌 Charger Warranty ke Saath</span><span class="dot-sep">•</span>
+    <span>🎨 Back Cover Printing</span><span class="dot-sep">•</span>
+    <span>✅ Trusted Since Day 1</span><span class="dot-sep">•</span>
+    <span>📱 Second Hand Mobiles</span><span class="dot-sep">•</span>
+    <span>🔧 Mobile Repairing</span><span class="dot-sep">•</span>
+    <span>🎧 Headphones</span><span class="dot-sep">•</span>
+    <span>🔌 Charger Warranty ke Saath</span><span class="dot-sep">•</span>
+    <span>🎨 Back Cover Printing</span><span class="dot-sep">•</span>
+    <span>✅ Trusted Since Day 1</span><span class="dot-sep">•</span>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="section-header reveal">
+    <div class="section-tag">Hamari Services</div>
+    <h2 class="section-title">Kya Kya Milega <span>Hamare Paas?</span></h2>
+    <p class="section-desc">Ek hi jagah sab kuch — aapki mobile zaroorat ki poori duniya yahan hai</p>
+  </div>
+  <div class="services-grid">
+    <div class="service-card reveal reveal-delay-1">
+      <div class="service-icon">📱</div>
+      <h3>2nd Hand Premium Mobiles</h3>
+      <p>Sahi condition mein verified phones — tested, cleaned aur ready to use. Ghar ki zaroorat ho ya gift — har budget mein option available.</p>
+      <div class="service-badge">₹5000 se Kam</div>
+    </div>
+    <div class="service-card reveal reveal-delay-2">
+      <div class="service-icon">🔧</div>
+      <h3>Mobile Repairing — Saste Mein</h3>
+      <p>Screen crack ho, battery down ho, ya charging port kaam na kare — sab thik karte hain. Fast service, fair price. Phone aaj lao, aaj lo.</p>
+      <div class="service-badge">Same Day Repairing</div>
+    </div>
+    <div class="service-card reveal reveal-delay-3">
+      <div class="service-icon">🎒</div>
+      <h3>Mobile Accessories</h3>
+      <p>Covers, screen guards, earphones, cables, holders — sab kuch original quality mein. Market se sasta, quality mein best.</p>
+      <div class="service-badge">Sasta & Best Quality</div>
+    </div>
+    <div class="service-card reveal reveal-delay-4">
+      <div class="service-icon">🎨</div>
+      <h3>Back Wallpaper & Sticker Printing</h3>
+      <p>Apne phone ko apni pehchaan do! Custom back cover printing, stickers aur wallpaper lagaana — ek dum unique look, sirf aapke liye.</p>
+      <div class="service-badge">Custom Design</div>
+    </div>
+    <div class="service-card reveal reveal-delay-1">
+      <div class="service-icon">🎧</div>
+      <h3>Naye Headphones</h3>
+      <p>Wired ya wireless, gaming ya calling — fresh stock ke naye headphones. Clear sound, durable build. Suno apne tarike se!</p>
+      <div class="service-badge">Brand New Stock</div>
+    </div>
+    <div class="service-card reveal reveal-delay-2">
+      <div class="service-icon">🔌</div>
+      <h3>Charger — Warranty ke Saath</h3>
+      <p>Duplicate nahi, original quality chargers. Fast charging support. Warranty milegi — kyunki humara bharosa sirf ek baar nahi, baar baar hona chahiye.</p>
+      <div class="service-badge">Warranty Included</div>
+    </div>
+  </div>
+</section>
+
+<!-- PHONES / BRANDS -->
+<section id="phones" class="brands-section">
+  <div class="section-header reveal">
+    <div class="section-tag">Sabhi Brands</div>
+    <h2 class="section-title">Konsi Bhi Brand <span>Chahiye?</span></h2>
+    <p class="section-desc">iPhone se leke budget Android tak — sab milega, sab tested, sab affordable</p>
+  </div>
+  <div class="brands-grid reveal">
+    <div class="brand-chip"><span class="brand-emoji">🍎</span> iPhone</div>
+    <div class="brand-chip"><span class="brand-emoji">📘</span> Samsung</div>
+    <div class="brand-chip"><span class="brand-emoji">1️⃣</span> OnePlus</div>
+    <div class="brand-chip"><span class="brand-emoji">⚡</span> Realme</div>
+    <div class="brand-chip"><span class="brand-emoji">🔴</span> Redmi / Xiaomi</div>
+    <div class="brand-chip"><span class="brand-emoji">🟢</span> Vivo</div>
+    <div class="brand-chip"><span class="brand-emoji">🔵</span> Oppo</div>
+    <div class="brand-chip"><span class="brand-emoji">🟠</span> Motorola</div>
+    <div class="brand-chip"><span class="brand-emoji">📱</span> Nokia</div>
+    <div class="brand-chip"><span class="brand-emoji">✨</span> Aur Bhi Bahut</div>
+  </div>
+</section>
+
+<!-- PRICE BANNER -->
+<section>
+  <div class="price-banner reveal">
+    <h2>
+      Sirf
+      <span class="big-price">₹5,000</span>
+      Mein Smartphone!
+    </h2>
+    <p>Naya phone lena ek sapna tha? Ab nahi! Humare paas available hain premium 2nd hand phones jo bilkul naye jaisi feel dete hain — sirf aadhi kimat mein.</p>
+    <div class="price-features">
+      <div class="price-feature-chip">✅ Tested & Verified</div>
+      <div class="price-feature-chip">✅ Clean Condition</div>
+      <div class="price-feature-chip">✅ Working Battery</div>
+      <div class="price-feature-chip">✅ Original Display</div>
+      <div class="price-feature-chip">✅ All Buttons Working</div>
+    </div>
+    <a href="https://wa.me/918600818634?text=Namaste!%20Mujhe%20₹5000%20ke%20andar%20ek%20acha%20phone%20chahiye." target="_blank" class="btn-primary" style="background: white; color: var(--primary-dark);">
+      💬 Abhi WhatsApp pe Poochho
+    </a>
+  </div>
+</section>
+
+<!-- WEEKLY STOCK -->
+<section class="weekly-section">
+  <div class="weekly-card reveal">
+    <h3>🔄 Har Hafte Naya Stock!</h3>
+    <p>Humara weekly stock rotation ensure karta hai ki aapko hamesha fresh aur latest models milte rahe. Ek baar miss kiya toh agle hafte phir aao — naya surprise hoga!</p>
+    <div class="weekly-timer">
+      <div class="timer-box">
+        <div class="timer-num" id="days">00</div>
+        <div class="timer-label">Din</div>
+      </div>
+      <div class="timer-box">
+        <div class="timer-num" id="hours">00</div>
+        <div class="timer-label">Ghante</div>
+      </div>
+      <div class="timer-box">
+        <div class="timer-num" id="mins">00</div>
+        <div class="timer-label">Minute</div>
+      </div>
+      <div class="timer-box">
+        <div class="timer-num" id="secs">00</div>
+        <div class="timer-label">Second</div>
+      </div>
+    </div>
+    <p style="color: var(--accent2); font-weight:600; margin-bottom: 16px;">Agle stock update tak ka countdown!</p>
+    <a href="https://www.instagram.com/adnan_makwani_003" target="_blank" class="btn-primary">
+      📸 Instagram pe Follow Karo Latest Deals ke liye
+    </a>
+  </div>
+</section>
+
+<!-- ACCESSORIES -->
+<section id="accessories">
+  <div class="section-header reveal">
+    <div class="section-tag">Accessories</div>
+    <h2 class="section-title">Phone ka <span>Poora Setup</span></h2>
+    <p class="section-desc">Sirf phone nahi — poora experience! Sab kuch ek hi jagah milega</p>
+  </div>
+  <div class="accessories-grid">
+    <div class="acc-card reveal reveal-delay-1">
+      <span class="acc-emoji">🎧</span>
+      <h4>Headphones</h4>
+      <p>Naye, original quality, branded sound experience</p>
+      <span class="acc-tag">Brand New</span>
+    </div>
+    <div class="acc-card reveal reveal-delay-2">
+      <span class="acc-emoji">🔌</span>
+      <h4>Charger</h4>
+      <p>Fast charging, durable cable, warranty guaranteed</p>
+      <span class="acc-tag">Warranty</span>
+    </div>
+    <div class="acc-card reveal reveal-delay-3">
+      <span class="acc-emoji">🛡️</span>
+      <h4>Screen Guard</h4>
+      <p>Tempered glass, anti-scratch, professional fitting</p>
+      <span class="acc-tag">Anti-Scratch</span>
+    </div>
+    <div class="acc-card reveal reveal-delay-4">
+      <span class="acc-emoji">📦</span>
+      <h4>Mobile Cover</h4>
+      <p>Sahi fit, stylish design, full drop protection</p>
+      <span class="acc-tag">Stylish</span>
+    </div>
+    <div class="acc-card reveal reveal-delay-1">
+      <span class="acc-emoji">🎨</span>
+      <h4>Back Printing</h4>
+      <p>Custom design, wallpaper printing, unique stickers</p>
+      <span class="acc-tag">Custom</span>
+    </div>
+    <div class="acc-card reveal reveal-delay-2">
+      <span class="acc-emoji">🔋</span>
+      <h4>Power Bank</h4>
+      <p>Jab phone ki battery saath na de — power bank hai na!</p>
+      <span class="acc-tag">Travel Ready</span>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section style="background: var(--bg2);">
+  <div class="section-header reveal">
+    <div class="section-tag">Hamara Bharosa</div>
+    <h2 class="section-title">Kyun Aate Hain Log <span>Hamare Paas?</span></h2>
+    <p class="section-desc">Sirf ek reason nahi — 5 strong reasons hain!</p>
+  </div>
+  <div class="why-grid">
+    <div class="why-card reveal reveal-delay-1">
+      <div class="why-num">01</div>
+      <h4>Honest Pricing</h4>
+      <p>Koi chupa hua charge nahi. Jo bolein, wahi lein. Seedha aur saaf deal.</p>
+    </div>
+    <div class="why-card reveal reveal-delay-2">
+      <div class="why-num">02</div>
+      <h4>Tested Products</h4>
+      <p>Har ek phone personally check hota hai. Koi bhi defective item nahi milta.</p>
+    </div>
+    <div class="why-card reveal reveal-delay-3">
+      <div class="why-num">03</div>
+      <h4>Fast Repairing</h4>
+      <p>Chhoti repair usi din. Aapka time valuable hai — humein pata hai.</p>
+    </div>
+    <div class="why-card reveal reveal-delay-4">
+      <div class="why-num">04</div>
+      <h4>After Sales Support</h4>
+      <p>Khareedne ke baad bhi humse poochh sakte ho. WhatsApp always open hai.</p>
+    </div>
+    <div class="why-card reveal reveal-delay-1">
+      <div class="why-num">05</div>
+      <h4>Local & Accessible</h4>
+      <p>Police station ke paas — easy to find, easy to reach, easy to trust.</p>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials-section">
+  <div class="section-header reveal">
+    <div class="section-tag">Log Kya Kehte Hain</div>
+    <h2 class="section-title">Real Log, <span>Real Reviews</span></h2>
+    <p class="section-desc">Humara kaam bolata hai — suniye unse jo pehle aa chuke hain</p>
+  </div>
+  <div class="testi-grid">
+    <div class="testi-card reveal reveal-delay-1">
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-text">"₹3500 mein ek dum sahi condition ka Redmi phone mila. Screen bilkul clear, battery full. Adnan bhai ne khud check karke diya. Ek dum mast experience!"</p>
+      <div class="testi-author">
+        <div class="testi-avatar">RS</div>
+        <div>
+          <div class="testi-name">Rahul Shinde</div>
+          <div class="testi-loc">Ner, Yavatmal</div>
+        </div>
+      </div>
+    </div>
+    <div class="testi-card reveal reveal-delay-2">
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-text">"Meri phone ki screen crack ho gayi thi. Usi din repair ho gayi — woh bhi dum saste mein! Aur charger bhi liya warranty ke saath. Bilkul koi problem nahi."</p>
+      <div class="testi-author">
+        <div class="testi-avatar">PM</div>
+        <div>
+          <div class="testi-name">Priya More</div>
+          <div class="testi-loc">Parsopant</div>
+        </div>
+      </div>
+    </div>
+    <div class="testi-card reveal reveal-delay-3">
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-text">"Custom back printing karwaya apne iPhone pe — bilkul best output mila. Sab log pooch rahe hain kahan se karwaya! Adnan bhai ka kaam top class hai."</p>
+      <div class="testi-author">
+        <div class="testi-avatar">AK</div>
+        <div>
+          <div class="testi-name">Arif Khan</div>
+          <div class="testi-loc">Yavatmal</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact-section">
+  <div class="section-header reveal">
+    <div class="section-tag">Hamare Paas Aao</div>
+    <h2 class="section-title">Milte Hain <span>Humse!</span></h2>
+    <p class="section-desc">Koi bhi sawaal ho — call karo, WhatsApp karo, ya seedha aa jao</p>
+  </div>
+  <div class="contact-grid">
+    <div class="contact-info reveal">
+      <h3>Shop Details</h3>
+      <div class="contact-item">
+        <div class="contact-icon">📍</div>
+        <div class="contact-item-text">
+          <div class="label">Address</div>
+          <div class="value">Police Station ke Paas,<br />Ner Parsopant,<br />District Yavatmal, Maharashtra</div>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">📞</div>
+        <div class="contact-item-text">
+          <div class="label">Phone / WhatsApp</div>
+          <div class="value"><a href="tel:+918600818634">+91 86008 18634</a></div>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">📸</div>
+        <div class="contact-item-text">
+          <div class="label">Instagram</div>
+          <div class="value"><a href="https://instagram.com/adnan_makwani_003" target="_blank">@adnan_makwani_003</a></div>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">🕐</div>
+        <div class="contact-item-text">
+          <div class="label">Timing</div>
+          <div class="value">Roz Subah 9 baje se Raat 9 baje tak</div>
+        </div>
+      </div>
+    </div>
+    <div class="contact-ctas reveal reveal-delay-2">
+      <a href="tel:+918600818634" class="contact-cta-card">
+        <div class="cta-card-icon phone-bg">📞</div>
+        <div class="cta-card-text">
+          <div class="cta-label">Call Karo</div>
+          <div class="cta-val">+91 86008 18634</div>
+        </div>
+      </a>
+      <a href="https://wa.me/918600818634?text=Namaste!%20Mujhe%20mobile%20ke%20baare%20mein%20puchna%20tha." target="_blank" rel="noopener" class="contact-cta-card wa-card">
+        <div class="cta-card-icon wa-bg">💬</div>
+        <div class="cta-card-text">
+          <div class="cta-label">WhatsApp Karo</div>
+          <div class="cta-val">+91 86008 18634</div>
+        </div>
+      </a>
+      <a href="https://instagram.com/adnan_makwani_003" target="_blank" rel="noopener" class="contact-cta-card">
+        <div class="cta-card-icon insta-bg">📸</div>
+        <div class="cta-card-text">
+          <div class="cta-label">Instagram Follow Karo</div>
+          <div class="cta-val">@adnan_makwani_003</div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Makwani <span>Mobile</span> Shop</div>
+  <div class="footer-tagline">Ner Parsopant ka Bharosemand Mobile Store — Yavatmal</div>
+  <div class="footer-links">
+    <a href="#services">Services</a>
+    <a href="#phones">Phones</a>
+    <a href="#accessories">Accessories</a>
+    <a href="https://wa.me/918600818634" target="_blank">WhatsApp</a>
+    <a href="https://instagram.com/adnan_makwani_003" target="_blank">Instagram</a>
+  </div>
+  <div class="footer-copy">© 2025 Makwani Mobile Shop | Police Station ke Paas, Ner Parsopant, Yavatmal | ❤️ Bana hai aapke liye</div>
+</footer>
+
+<script>
+  // STARS
+  const starsContainer = document.getElementById('stars');
+  for (let i = 0; i < 80; i++) {
+    const star = document.createElement('div');
+    star.className = 'star';
+    star.style.left = Math.random() * 100 + '%';
+    star.style.top = Math.random() * 100 + '%';
+    star.style.setProperty('--d', (2 + Math.random() * 4) + 's');
+    star.style.animationDelay = (Math.random() * 4) + 's';
+    starsContainer.appendChild(star);
+  }
+
+  // MOBILE MENU
+  function toggleMenu() {
+    document.getElementById('navLinks').classList.toggle('open');
+  }
+
+  document.querySelectorAll('#navLinks a').forEach(a => {
+    a.addEventListener('click', () => {
+      document.getElementById('navLinks').classList.remove('open');
+    });
+  });
+
+  // NAVBAR SCROLL
+  window.addEventListener('scroll', () => {
+    const nav = document.getElementById('navbar');
+    if (window.scrollY > 60) {
+      nav.style.padding = '10px 5%';
+    } else {
+      nav.style.padding = '14px 5%';
+    }
+  });
+
+  // SCROLL REVEAL
+  const revealEls = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  revealEls.forEach(el => observer.observe(el));
+
+  // WEEKLY COUNTDOWN (to next Sunday midnight)
+  function getNextSunday() {
+    const now = new Date();
+    const day = now.getDay();
+    const daysUntilSunday = (7 - day) % 7 || 7;
+    const next = new Date(now);
+    next.setDate(now.getDate() + daysUntilSunday);
+    next.setHours(0, 0, 0, 0);
+    return next;
+  }
+
+  function updateCountdown() {
+    const target = getNextSunday();
+    const now = new Date();
+    const diff = target - now;
+    if (diff <= 0) return;
+    const d = Math.floor(diff / 86400000);
+    const h = Math.floor((diff % 86400000) / 3600000);
+    const m = Math.floor((diff % 3600000) / 60000);
+    const s = Math.floor((diff % 60000) / 1000);
+    document.getElementById('days').textContent = String(d).padStart(2,'0');
+    document.getElementById('hours').textContent = String(h).padStart(2,'0');
+    document.getElementById('mins').textContent = String(m).padStart(2,'0');
+    document.getElementById('secs').textContent = String(s).padStart(2,'0');
+  }
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
+</script>
+</body>
+</html>
