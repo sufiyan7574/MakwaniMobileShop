@@ -4,7 +4,28 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Makwani Mobile Shop | Ner Parsopant, Yavatmal</title>
-  <meta name="description" content="Ner Parsopant ki sabse bharosemand mobile shop. 2nd hand mobiles ₹2000 se shuru, naye phones ₹499 se, repairing, accessories aur home delivery 30km tak." />
+  <meta name="description" content="Ner Parsopant ki sabse bharosemand mobile shop. 2nd hand mobiles ₹2000 se shuru, naye phones ₹499 se, repairing ₹99 se, accessories aur home delivery 30km tak." />
+  <meta name="keywords" content="second hand mobile Ner, mobile shop Yavatmal, mobile repairing Ner Parsopant, cheap mobile Yavatmal, iPhone second hand Yavatmal, Samsung second hand Ner, mobile accessories Ner, Makwani mobile shop" />
+  <link rel="canonical" href="https://www.makwanimobileshop.com/" />
+  <meta property="og:title" content="Makwani Mobile Shop | Ner Parsopant Yavatmal" />
+  <meta property="og:description" content="2nd Hand mobiles ₹2000 se, naye phones ₹499 se, repairing ₹99 se, 30km home delivery. Ner ka #1 mobile store!" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.makwanimobileshop.com" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"MobilePhoneStore",
+    "name":"Makwani Mobile Shop",
+    "description":"Ner Parsopant ki #1 mobile shop. 2nd hand mobiles, repairing, accessories, home delivery 30km.",
+    "url":"https://www.makwanimobileshop.com",
+    "telephone":"+918600818634",
+    "address":{"@type":"PostalAddress","streetAddress":"Police Station ke Paas","addressLocality":"Ner Parsopant","addressRegion":"Yavatmal, Maharashtra","addressCountry":"IN"},
+    "openingHours":"Mo-Su 09:00-21:00",
+    "priceRange":"₹",
+    "sameAs":["https://www.instagram.com/adnan_makwani_003"]
+  }
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700;800&family=Hind:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
@@ -238,6 +259,17 @@
     .footer-links a:hover { color:var(--primary); }
     .footer-copy { color:var(--text-muted); font-size:0.8rem; border-top:1px solid rgba(255,255,255,0.05); padding-top:16px; margin-top:8px; }
 
+
+    /* PRICE SECTION */
+    .price-card { background:var(--card-bg); border:1px solid var(--card-border); border-radius:var(--radius); padding:22px 16px; text-align:center; transition:all 0.3s; position:relative; overflow:hidden; }
+    .price-card::after { content:''; position:absolute; bottom:0; left:0; right:0; height:2px; background:linear-gradient(90deg,var(--primary),var(--accent)); transform:scaleX(0); transition:transform 0.3s; }
+    .price-card:hover { transform:translateY(-5px); border-color:rgba(255,107,0,0.45); box-shadow:var(--shadow); }
+    .price-card:hover::after { transform:scaleX(1); }
+    .price-emoji { font-size:2.2rem; display:block; margin-bottom:8px; }
+    .price-card h4 { font-size:0.9rem; font-weight:700; margin-bottom:6px; }
+    .price-from { font-family:'Baloo 2',cursive; font-size:1.5rem; font-weight:800; color:var(--primary); display:block; }
+    .price-label { font-size:0.72rem; color:var(--text-muted); }
+
     /* MOBILE MENU */
     @media (max-width: 768px) {
       .nav-links { position:fixed; top:0; right:-100%; width:75%; height:100vh; background:var(--bg2); flex-direction:column; align-items:flex-start; padding:80px 30px 30px; gap:4px; transition:right 0.35s ease; border-left:1px solid var(--card-border); z-index:999; }
@@ -361,8 +393,8 @@
     <span>🚚 Home Delivery 30km Tak</span><span class="dot-sep">•</span>
     <span>🛡️ 3 Month Warranty</span><span class="dot-sep">•</span>
     <span>🎨 Back Cover Printing</span><span class="dot-sep">•</span>
-    <span>🔧 Sasti Repairing</span><span class="dot-sep">•</span>
-    <span>📦 Bulk Lot Available</span><span class="dot-sep">•</span>
+    <span>🔧 Sasti Repairing ₹99se</span><span class="dot-sep">•</span>
+    <span>📦 Bulk Mobile Lot Available</span><span class="dot-sep">•</span>
   </div>
 </div>
 
@@ -390,13 +422,13 @@
       <div class="service-icon">📦</div>
       <h3>Bulk Mobile Lot</h3>
       <p>Reseller ho? Dukaan chalate ho? Bulk mein phones kharido — ₹2000 se start. Best margin guaranteed.</p>
-      <div class="service-badge">Bulk ₹2000 se</div>
+      <div class="service-badge">Bulk ₹2000 se </div>
     </div>
     <div class="service-card reveal reveal-delay-4">
       <div class="service-icon">🔧</div>
-      <h3>Mobile Repairing — Saste Mein</h3>
+      <h3>Mobile Repairing — Saste Mein Sirf ₹99 Se Start</h3>
       <p>Screen crack, battery down, charging port — sab thik. Fast service, fair price. Phone aaj lao, aaj lo wapas.</p>
-      <div class="service-badge green">Same Day Repair</div>
+      <div class="service-badge green">₹99 se | Same Day</div>
     </div>
     <div class="service-card reveal reveal-delay-1">
       <div class="service-icon">🎒</div>
@@ -423,8 +455,8 @@
 <!-- BRANDS -->
 <section id="phones" class="brands-section">
   <div class="section-header reveal">
-    <div class="section-tag">Sabhi Brands</div>
-    <h2 class="section-title">Konsi Bhi Brand <span>Chahiye?</span></h2>
+    <div class="section-tag">Sabhi Brands Available</div>
+    <h2 class="section-title">Konsi Brand Aapko Chaiye? <span>Chahiye?</span></h2>
     <p class="section-desc">iPhone se budget Android tak — sab tested, sab affordable</p>
   </div>
   <div class="brands-grid reveal">
@@ -444,7 +476,7 @@
 <!-- PRICE LIST -->
 <section id="prices" class="prices-section">
   <div class="section-header reveal">
-    <div class="section-tag">Humare Daam</div>
+    <div class="section-tag">Hamare Daam</div>
     <h2 class="section-title">Itne Saste Daam — <span>Yakin Nahi Hoga!</span></h2>
     <p class="section-desc">Har cheez ka starting price yahan dekho — aur haan, quality bhi top class!</p>
   </div>
@@ -521,6 +553,29 @@
   </div>
 </section>
 
+<!-- PRICE CARDS -->
+<section id="prices" style="background:var(--bg3);">
+  <div class="section-header reveal">
+    <div class="section-tag">Hamare Daam</div>
+    <h2 class="section-title">Itne Saste Daam — <span>Yakin Nahi Hoga!</span></h2>
+    <p class="section-desc">Har cheez ka starting price dekho — quality bhi top class!</p>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(155px,1fr));gap:14px;max-width:900px;margin:0 auto;">
+    <div class="price-card reveal reveal-delay-1"><span class="price-emoji">📱</span><h4>2nd Hand Mobile</h4><span class="price-from">₹2,000</span><span class="price-label">se shuru</span></div>
+    <div class="price-card reveal reveal-delay-2"><span class="price-emoji">✨</span><h4>Naya Mobile</h4><span class="price-from">₹499</span><span class="price-label">se shuru</span></div>
+    <div class="price-card reveal reveal-delay-3"><span class="price-emoji">🔧</span><h4>Mobile Repair</h4><span class="price-from">₹99</span><span class="price-label">se shuru</span></div>
+    <div class="price-card reveal reveal-delay-4"><span class="price-emoji">📦</span><h4>Bulk Lot</h4><span class="price-from">₹2,000</span><span class="price-label">se shuru</span></div>
+    <div class="price-card reveal reveal-delay-1"><span class="price-emoji">🔌</span><h4>Charger</h4><span class="price-from">₹49</span><span class="price-label">se + warranty</span></div>
+    <div class="price-card reveal reveal-delay-2"><span class="price-emoji">🎧</span><h4>Headphone</h4><span class="price-from">₹30</span><span class="price-label">se shuru</span></div>
+    <div class="price-card reveal reveal-delay-3"><span class="price-emoji">🔗</span><h4>Data Cable</h4><span class="price-from">₹30</span><span class="price-label">se shuru</span></div>
+    <div class="price-card reveal reveal-delay-4"><span class="price-emoji">🛡️</span><h4>Screen Guard</h4><span class="price-from">₹69</span><span class="price-label">se shuru</span></div>
+    <div class="price-card reveal reveal-delay-1"><span class="price-emoji">📦</span><h4>Mobile Cover</h4><span class="price-from">₹49</span><span class="price-label">se shuru</span></div>
+    <div class="price-card reveal reveal-delay-2"><span class="price-emoji">🎨</span><h4>Back Printing</h4><span class="price-from">₹99</span><span class="price-label">se shuru</span></div>
+    <div class="price-card reveal reveal-delay-3"><span class="price-emoji">🚗</span><h4>Car Charger</h4><span class="price-from">₹149</span><span class="price-label">se shuru</span></div>
+    <div class="price-card reveal reveal-delay-4"><span class="price-emoji">📞</span><h4>Koi Bhi Item</h4><span class="price-from">Call</span><span class="price-label">karke poochho</span></div>
+  </div>
+</section>
+
 <!-- ACCESSORIES -->
 <section id="accessories">
   <div class="section-header reveal">
@@ -561,21 +616,21 @@
       <span class="acc-emoji">🛡️</span>
       <h4>Screen Guard</h4>
       <p>Tempered glass, professional fit</p>
-      <span class="acc-price">Available</span>
+      <span class="acc-price">₹69 se</span>
       <span class="acc-tag">Anti-Scratch</span>
     </div>
     <div class="acc-card reveal reveal-delay-2">
       <span class="acc-emoji">📦</span>
       <h4>Mobile Cover</h4>
       <p>Stylish design, drop protection</p>
-      <span class="acc-price">Available</span>
+      <span class="acc-price">₹49 se</span>
       <span class="acc-tag">Stylish</span>
     </div>
     <div class="acc-card reveal reveal-delay-3">
       <span class="acc-emoji">🎨</span>
       <h4>Back Printing</h4>
       <p>Custom wallpaper, sticker printing</p>
-      <span class="acc-price">Custom</span>
+      <span class="acc-price">₹99 se</span>
       <span class="acc-tag">Unique Look</span>
     </div>
     <div class="acc-card reveal reveal-delay-4">
@@ -759,7 +814,7 @@
         <div class="testi-avatar">PM</div>
         <div>
           <div class="testi-name">Priya More</div>
-          <div class="testi-loc">Parsopant</div>
+          <div class="testi-loc">Shivaji Nagar</div>
         </div>
       </div>
     </div>
