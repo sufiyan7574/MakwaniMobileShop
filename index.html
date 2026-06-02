@@ -244,7 +244,7 @@
     .cta-card-text .cta-val { font-weight:700; font-size:0.97rem; color:var(--text); }
 
     /* FLOATING WA */
-    .float-wa { position:fixed; bottom:80px; right:20px; z-index:9999; display:flex; align-items:center; gap:10px; background:linear-gradient(135deg,var(--whatsapp),#128C7E); color:white; text-decoration:none; padding:14px 20px; border-radius:50px; font-family:'Baloo 2',cursive; font-weight:700; font-size:0.95rem; box-shadow:0 6px 30px rgba(37,211,102,0.5); animation:floatWA 3s ease-in-out infinite; }
+    .float-wa { position:fixed; bottom:24px; right:20px; z-index:9999; display:flex; align-items:center; gap:10px; background:linear-gradient(135deg,var(--whatsapp),#128C7E); color:white; text-decoration:none; padding:14px 20px; border-radius:50px; font-family:'Baloo 2',cursive; font-weight:700; font-size:0.95rem; box-shadow:0 6px 30px rgba(37,211,102,0.5); animation:floatWA 3s ease-in-out infinite; }
     .float-wa:hover { transform:scale(1.06)!important; }
     @keyframes floatWA { 0%,100%{transform:translateY(0);box-shadow:0 6px 30px rgba(37,211,102,0.5)} 50%{transform:translateY(-6px);box-shadow:0 12px 40px rgba(37,211,102,0.65)} }
     .float-wa .wa-icon { font-size:1.4rem; }
@@ -304,6 +304,7 @@
       .timer-box { padding:10px 10px; min-width:52px; }
       .timer-num { font-size:1.5rem; }
       .delivery-card { padding:30px 20px; }
+      .float-wa { bottom:16px; right:12px; padding:11px 16px; font-size:0.85rem; }
     }
 
     /* SCROLL ANIMATIONS */
@@ -419,6 +420,51 @@
     <span>📦 Bulk Mobile Lot Available</span><span class="dot-sep">•</span>
   </div>
 </div>
+
+<!-- MOBILE LOT SLIDER -->
+<section class="slider-section" id="stock">
+  <div class="section-header reveal">
+    <div class="section-tag">Hamare Phones Dekho</div>
+    <h2 class="section-title">Available <span>Mobile Lot</span></h2>
+    <p class="section-desc">Yeh hain hamare latest phones — fresh stock, checked aur ready to sell!</p>
+  </div>
+  <div class="slider-wrap reveal">
+    <div class="slider-container">
+      <div class="slider-badge">📱 Fresh Stock</div>
+      <div class="slider-track" id="sliderTrack">
+        <div class="slide">
+          <img src="https://i.ibb.co/rK9kD07q/Mobilelot1.jpg" alt="Mobile Lot 1 - Makwani Mobile Shop Ner" loading="lazy" />
+          <div class="slide-caption">📱 2nd Hand Phones — ₹2000 se shuru | Tested & Verified</div>
+        </div>
+        <div class="slide">
+          <img src="https://i.ibb.co/XZ0LNyVS/Mobilelot2.jpg" alt="Mobile Lot 2 - Second Hand Phones Yavatmal" loading="lazy" />
+          <div class="slide-caption">✅ Sabhi Brands Available — iPhone, Samsung, OnePlus & More</div>
+        </div>
+        <div class="slide">
+          <img src="https://i.ibb.co/XZ0LNyVS/Mobilelot2.jpg" alt="Mobile Lot 3 - Bulk Phones Ner" loading="lazy" />
+          <div class="slide-caption">📦 Bulk mein bhi milenge — Resellers ke liye best deal!</div>
+        </div>
+        <div class="slide">
+          <img src="https://i.ibb.co/XZ0LNyVS/Mobilelot2.jpg" alt="Mobile Lot 4 - Budget Phones" loading="lazy" />
+          <div class="slide-caption">🔋 Working battery, original display — 3 Month Warranty</div>
+        </div>
+        <div class="slide">
+          <img src="https://i.ibb.co/XZ0LNyVS/Mobilelot2.jpg" alt="Mobile Lot 5 - Makwani Shop" loading="lazy" />
+          <div class="slide-caption">🚚 30km Home Delivery available — WhatsApp pe order karo!</div>
+        </div>
+      </div>
+      <button class="slider-btn slider-prev" onclick="changeSlide(-1)" aria-label="Previous">‹</button>
+      <button class="slider-btn slider-next" onclick="changeSlide(1)" aria-label="Next">›</button>
+    </div>
+    <div class="slider-dots" id="sliderDots">
+      <button class="sdot active" onclick="goToSlide(0)"></button>
+      <button class="sdot" onclick="goToSlide(1)"></button>
+      <button class="sdot" onclick="goToSlide(2)"></button>
+      <button class="sdot" onclick="goToSlide(3)"></button>
+      <button class="sdot" onclick="goToSlide(4)"></button>
+    </div>
+  </div>
+</section>
 
 <!-- SERVICES -->
 <section id="services">
@@ -643,51 +689,6 @@
     <div class="price-card reveal reveal-delay-2"><span class="price-emoji">🎨</span><h4>Back Printing</h4><span class="price-from">₹99</span><span class="price-label">se shuru</span></div>
     <div class="price-card reveal reveal-delay-3"><span class="price-emoji">🚗</span><h4>Car Charger</h4><span class="price-from">₹149</span><span class="price-label">se shuru</span></div>
     <div class="price-card reveal reveal-delay-4"><span class="price-emoji">📞</span><h4>Koi Bhi Item</h4><span class="price-from">Call</span><span class="price-label">karke poochho</span></div>
-  </div>
-</section>
-
-<!-- MOBILE LOT SLIDER -->
-<section class="slider-section" id="stock">
-  <div class="section-header reveal">
-    <div class="section-tag">Hamare Phones Dekho</div>
-    <h2 class="section-title">Available <span>Mobile Lot</span></h2>
-    <p class="section-desc">Yeh hain hamare latest phones — fresh stock, checked aur ready to sell!</p>
-  </div>
-  <div class="slider-wrap reveal">
-    <div class="slider-container">
-      <div class="slider-badge">📱 Fresh Stock</div>
-      <div class="slider-track" id="sliderTrack">
-        <div class="slide">
-          <img src="https://i.ibb.co/rK9kD07q/Mobilelot1.jpg" alt="Mobile Lot 1 - Makwani Mobile Shop Ner" loading="lazy" />
-          <div class="slide-caption">📱 2nd Hand Phones — ₹2000 se shuru | Tested & Verified</div>
-        </div>
-        <div class="slide">
-          <img src="https://i.ibb.co/XZ0LNyVS/Mobilelot2.jpg" alt="Mobile Lot 2 - Second Hand Phones Yavatmal" loading="lazy" />
-          <div class="slide-caption">✅ Sabhi Brands Available — iPhone, Samsung, OnePlus & More</div>
-        </div>
-        <div class="slide">
-          <img src="https://i.ibb.co/XZ0LNyVS/Mobilelot2.jpg" alt="Mobile Lot 3 - Bulk Phones Ner" loading="lazy" />
-          <div class="slide-caption">📦 Bulk mein bhi milenge — Resellers ke liye best deal!</div>
-        </div>
-        <div class="slide">
-          <img src="https://i.ibb.co/XZ0LNyVS/Mobilelot2.jpg" alt="Mobile Lot 4 - Budget Phones" loading="lazy" />
-          <div class="slide-caption">🔋 Working battery, original display — 3 Month Warranty</div>
-        </div>
-        <div class="slide">
-          <img src="https://i.ibb.co/XZ0LNyVS/Mobilelot2.jpg" alt="Mobile Lot 5 - Makwani Shop" loading="lazy" />
-          <div class="slide-caption">🚚 30km Home Delivery available — WhatsApp pe order karo!</div>
-        </div>
-      </div>
-      <button class="slider-btn slider-prev" onclick="changeSlide(-1)" aria-label="Previous">‹</button>
-      <button class="slider-btn slider-next" onclick="changeSlide(1)" aria-label="Next">›</button>
-    </div>
-    <div class="slider-dots" id="sliderDots">
-      <button class="sdot active" onclick="goToSlide(0)"></button>
-      <button class="sdot" onclick="goToSlide(1)"></button>
-      <button class="sdot" onclick="goToSlide(2)"></button>
-      <button class="sdot" onclick="goToSlide(3)"></button>
-      <button class="sdot" onclick="goToSlide(4)"></button>
-    </div>
   </div>
 </section>
 
