@@ -2,8 +2,8 @@
 <html lang="hi">
 <head>
   <meta charset="UTF-8" />
-  <link rel="icon" type="image/png" href="https://i.ibb.co/27wv9Xdv/file-00000000f6047206a4833b92f7fda42d.png" />
-  <link rel="apple-touch-icon" href="https://i.ibb.co/27wv9Xdv/file-00000000f6047206a4833b92f7fda42d.png" />
+  <link rel="icon" type="image/png" href="https://i.ibb.co/JWbzM9DR/IMG-20260601-WA0020.jpg" />
+  <link rel="apple-touch-icon" href="https://i.ibb.co/JWbzM9DR/IMG-20260601-WA0020.jpg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Makwani Mobile Shop | Ner Parsopant, Yavatmal</title>
   <meta name="description" content="Ner Parsopant ki sabse bharosemand mobile shop. 2nd hand mobiles ₹2000 se shuru, naye phones ₹499 se, repairing ₹99 se, accessories aur home delivery 30km tak." />
@@ -25,7 +25,7 @@
     "address":{"@type":"PostalAddress","streetAddress":"Police Station ke Paas","addressLocality":"Ner Parsopant","addressRegion":"Yavatmal, Maharashtra","addressCountry":"IN"},
     "openingHours":"Mo-Su 09:00-21:00",
     "priceRange":"₹",
-    "sameAs":["https://www.instagram.com/adnan_makwani_003"]
+    "sameAs":["https://www.instagram.com/Makwani_mobile_shop_"]
   }
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -272,6 +272,25 @@
     .price-from { font-family:'Baloo 2',cursive; font-size:1.5rem; font-weight:800; color:var(--primary); display:block; }
     .price-label { font-size:0.72rem; color:var(--text-muted); }
 
+
+    /* IMAGE SLIDER */
+    .slider-section { background:var(--bg2); }
+    .slider-wrap { max-width:860px; margin:0 auto; position:relative; }
+    .slider-container { position:relative; border-radius:20px; overflow:hidden; background:var(--bg3); box-shadow:0 16px 48px rgba(255,107,0,0.2); }
+    .slider-track { display:flex; transition:transform 0.5s cubic-bezier(0.4,0,0.2,1); will-change:transform; }
+    .slide { min-width:100%; position:relative; }
+    .slide img { width:100%; height:420px; object-fit:cover; display:block; }
+    @media(max-width:600px){ .slide img { height:260px; } }
+    .slide-caption { position:absolute; bottom:0; left:0; right:0; background:linear-gradient(transparent,rgba(0,0,0,0.75)); padding:24px 20px 16px; color:#fff; font-family:'Baloo 2',cursive; font-size:1rem; font-weight:600; }
+    .slider-btn { position:absolute; top:50%; transform:translateY(-50%); background:rgba(255,107,0,0.85); border:none; color:#fff; width:44px; height:44px; border-radius:50%; font-size:1.2rem; cursor:pointer; z-index:10; display:flex; align-items:center; justify-content:center; transition:all .25s; backdrop-filter:blur(4px); }
+    .slider-btn:hover { background:var(--primary); transform:translateY(-50%) scale(1.1); }
+    .slider-prev { left:12px; }
+    .slider-next { right:12px; }
+    .slider-dots { display:flex; gap:8px; justify-content:center; margin-top:16px; }
+    .sdot { width:10px; height:10px; border-radius:50%; background:rgba(255,107,0,0.3); cursor:pointer; transition:all .3s; border:none; }
+    .sdot.active { background:var(--primary); transform:scale(1.3); }
+    .slider-badge { position:absolute; top:16px; left:16px; background:linear-gradient(135deg,var(--primary),var(--primary-dark)); color:#fff; padding:6px 14px; border-radius:50px; font-family:'Baloo 2',cursive; font-size:.82rem; font-weight:700; z-index:5; box-shadow:0 4px 12px rgba(255,107,0,.4); }
+
     /* MOBILE MENU */
     @media (max-width: 768px) {
       .nav-links { position:fixed; top:0; right:-100%; width:75%; height:100vh; background:var(--bg2); flex-direction:column; align-items:flex-start; padding:80px 30px 30px; gap:4px; transition:right 0.35s ease; border-left:1px solid var(--card-border); z-index:999; }
@@ -311,7 +330,7 @@
 <!-- NAVBAR -->
 <nav id="navbar">
   <a href="#" class="nav-logo">
-    <div class="logo-icon"><img src="https://i.ibb.co/27wv9Xdv/file-00000000f6047206a4833b92f7fda42d.png" alt="Makwani Mobile Shop Logo" width="48" height="48" /></div>
+    <div class="logo-icon"><img src="https://i.ibb.co/JWbzM9DR/IMG-20260601-WA0020.jpg" alt="Makwani Mobile Shop Logo" width="48" height="48" /></div>
     <div>
       <div class="logo-text">Makwani <span>Mobile</span></div>
       <div class="logo-sub">Ner Parsopant, Yavatmal</div>
@@ -321,6 +340,7 @@
     <li><a href="#services">Services</a></li>
     <li><a href="#prices">Prices</a></li>
     <li><a href="#accessories">Accessories</a></li>
+    <li><a href="#stock">Stock</a></li>
     <li><a href="#delivery">Delivery</a></li>
     <li><a href="#contact">Contact</a></li>
     <li><a href="https://wa.me/918600818634?text=Namaste!" target="_blank" class="nav-cta">📞 Puchho</a></li>
@@ -342,7 +362,7 @@
       Seedha <span class="highlight">Budget</span> Mein<br/>Best Mobile Milega!
     </h1>
     <p class="hero-sub">
-      2nd Hand Mobiles <strong>₹2000 se shuru</strong> — Naye Phones <strong>₹499 se</strong> — iPhone, Samsung, OnePlus aur bahut kuch. Repairing, Accessories, Back Printing — sab ek jagah!
+      Naye Phones <strong>₹499 se</strong> — 2nd Hand Mobiles <strong>₹2000 se shuru</strong> — iPhone, Samsung, OnePlus. Repairing ⚡ <strong>15 Minute mein Display fix!</strong> — sab ek jagah!
     </p>
     <div class="hero-pills">
       <span class="hero-pill">📱 2nd Hand ₹2000 se</span>
@@ -444,12 +464,36 @@
       <p>Custom back cover printing, wallpaper stickers — apne phone ko unique look do. Ek dum premium finish!</p>
       <div class="service-badge green">Custom Design</div>
     </div>
+    <div class="service-card reveal reveal-delay-3">
+      <div class="service-icon">💰</div>
+      <h3>Purana Mobile Becho — Hum Kharidenge!</h3>
+      <p>Aapka purana ya use kiya hua phone hum kharid lete hain! Seedha hamare paas laao ya WhatsApp pe photo bhejo — sahi daam milega. Koi bhi brand, koi bhi condition.</p>
+      <div class="service-badge">Best Price Milega</div>
+    </div>
+    <div class="service-card reveal reveal-delay-4">
+      <div class="service-icon">🏠</div>
+      <h3>Repair Home Pickup & Delivery!</h3>
+      <p>Dukaan tak aane ki zaroorat nahi! Hum aapka phone ghar se pickup karenge, repair karenge aur wapas deliver karenge. 30km range ke andar free pickup.</p>
+      <div class="service-badge green">Free Home Pickup</div>
+    </div>
+    <div class="service-card reveal reveal-delay-1">
+      <div class="service-icon">⚡</div>
+      <h3>15 Minute Display Repair!</h3>
+      <p>Screen crack ho gayi? Sirf 15 minute mein naya display lagaenge! Other repairs bhi jaldi se ho jaati hain. Aaj lao, aaj lo — time waste nahi!</p>
+      <div class="service-badge green">Sirf 15 Minutes!</div>
+    </div>
+    <div class="service-card reveal reveal-delay-2">
+      <div class="service-icon">⌚</div>
+      <h3>Smart Watch & Watch Charger</h3>
+      <p>Latest smart watches aur unke chargers — fitness tracker, calling watch, stylish designs — sab available. Gift ke liye bhi perfect!</p>
+      <div class="service-badge">Available</div>
+    </div>
   </div>
   <div class="warranty-banner reveal" style="margin-top:30px;">
     <div class="warranty-icon">🛡️</div>
     <div class="warranty-text">
-      <h4>3 Mahine ki Warranty — Har Product pe!</h4>
-      <p>Charger ho, headphone ho ya mobile — sab pe 3 month warranty. Koi bhi problem aayi toh hum responsible hain. Ye hamara wada hai!</p>
+      <h4>Warranty — Har Warranted Product pe!</h4>
+      <p>Charger, headphone, charger watch — warranty ke saath aane wale products pe <strong style="color:var(--accent2)">3 Month</strong>, <strong style="color:var(--accent2)">6 Month</strong> ya <strong style="color:var(--accent2)">1 Year Warranty</strong> milegi. Product ke hisaab se warranty alag hoti hai. Hamara wada hai!</p>
     </div>
   </div>
 </section>
@@ -528,8 +572,32 @@
     <div class="price-card reveal reveal-delay-4">
       <span class="price-emoji">🎨</span>
       <h4>Back Printing</h4>
-      <span class="price-from">Call</span>
-      <span class="price-label">karke poochho</span>
+      <span class="price-from">₹99</span>
+      <span class="price-label">se shuru</span>
+    </div>
+    <div class="price-card reveal reveal-delay-1">
+      <span class="price-emoji">🛡️</span>
+      <h4>Screen Guard</h4>
+      <span class="price-from">₹69</span>
+      <span class="price-label">se shuru</span>
+    </div>
+    <div class="price-card reveal reveal-delay-2">
+      <span class="price-emoji">📦</span>
+      <h4>Mobile Cover</h4>
+      <span class="price-from">₹49</span>
+      <span class="price-label">se shuru</span>
+    </div>
+    <div class="price-card reveal reveal-delay-3">
+      <span class="price-emoji">⌚</span>
+      <h4>Smart Watch</h4>
+      <span class="price-from">Available</span>
+      <span class="price-label">WhatsApp pe poochho</span>
+    </div>
+    <div class="price-card reveal reveal-delay-4">
+      <span class="price-emoji">💰</span>
+      <h4>Purana Mobile Becho</h4>
+      <span class="price-from">Best</span>
+      <span class="price-label">price milega</span>
     </div>
   </div>
 </section>
@@ -575,6 +643,51 @@
     <div class="price-card reveal reveal-delay-2"><span class="price-emoji">🎨</span><h4>Back Printing</h4><span class="price-from">₹99</span><span class="price-label">se shuru</span></div>
     <div class="price-card reveal reveal-delay-3"><span class="price-emoji">🚗</span><h4>Car Charger</h4><span class="price-from">₹149</span><span class="price-label">se shuru</span></div>
     <div class="price-card reveal reveal-delay-4"><span class="price-emoji">📞</span><h4>Koi Bhi Item</h4><span class="price-from">Call</span><span class="price-label">karke poochho</span></div>
+  </div>
+</section>
+
+<!-- MOBILE LOT SLIDER -->
+<section class="slider-section" id="stock">
+  <div class="section-header reveal">
+    <div class="section-tag">Hamare Phones Dekho</div>
+    <h2 class="section-title">Available <span>Mobile Lot</span></h2>
+    <p class="section-desc">Yeh hain hamare latest phones — fresh stock, checked aur ready to sell!</p>
+  </div>
+  <div class="slider-wrap reveal">
+    <div class="slider-container">
+      <div class="slider-badge">📱 Fresh Stock</div>
+      <div class="slider-track" id="sliderTrack">
+        <div class="slide">
+          <img src="https://i.ibb.co/rK9kD07q/Mobilelot1.jpg" alt="Mobile Lot 1 - Makwani Mobile Shop Ner" loading="lazy" />
+          <div class="slide-caption">📱 2nd Hand Phones — ₹2000 se shuru | Tested & Verified</div>
+        </div>
+        <div class="slide">
+          <img src="https://i.ibb.co/XZ0LNyVS/Mobilelot2.jpg" alt="Mobile Lot 2 - Second Hand Phones Yavatmal" loading="lazy" />
+          <div class="slide-caption">✅ Sabhi Brands Available — iPhone, Samsung, OnePlus & More</div>
+        </div>
+        <div class="slide">
+          <img src="https://i.ibb.co/XZ0LNyVS/Mobilelot2.jpg" alt="Mobile Lot 3 - Bulk Phones Ner" loading="lazy" />
+          <div class="slide-caption">📦 Bulk mein bhi milenge — Resellers ke liye best deal!</div>
+        </div>
+        <div class="slide">
+          <img src="https://i.ibb.co/XZ0LNyVS/Mobilelot2.jpg" alt="Mobile Lot 4 - Budget Phones" loading="lazy" />
+          <div class="slide-caption">🔋 Working battery, original display — 3 Month Warranty</div>
+        </div>
+        <div class="slide">
+          <img src="https://i.ibb.co/XZ0LNyVS/Mobilelot2.jpg" alt="Mobile Lot 5 - Makwani Shop" loading="lazy" />
+          <div class="slide-caption">🚚 30km Home Delivery available — WhatsApp pe order karo!</div>
+        </div>
+      </div>
+      <button class="slider-btn slider-prev" onclick="changeSlide(-1)" aria-label="Previous">‹</button>
+      <button class="slider-btn slider-next" onclick="changeSlide(1)" aria-label="Next">›</button>
+    </div>
+    <div class="slider-dots" id="sliderDots">
+      <button class="sdot active" onclick="goToSlide(0)"></button>
+      <button class="sdot" onclick="goToSlide(1)"></button>
+      <button class="sdot" onclick="goToSlide(2)"></button>
+      <button class="sdot" onclick="goToSlide(3)"></button>
+      <button class="sdot" onclick="goToSlide(4)"></button>
+    </div>
   </div>
 </section>
 
@@ -698,6 +811,20 @@
       <span class="acc-price">Available</span>
       <span class="acc-tag">Travel Ready</span>
     </div>
+    <div class="acc-card reveal reveal-delay-1">
+      <span class="acc-emoji">⌚</span>
+      <h4>Smart Watch</h4>
+      <p>Fitness, calling, stylish designs</p>
+      <span class="acc-price">Available</span>
+      <span class="acc-tag">Trendy</span>
+    </div>
+    <div class="acc-card reveal reveal-delay-2">
+      <span class="acc-emoji">🔌</span>
+      <h4>Watch Charger</h4>
+      <p>Magnetic & pin type, all brands</p>
+      <span class="acc-price">Available</span>
+      <span class="acc-tag">All Types</span>
+    </div>
   </div>
 </section>
 
@@ -725,7 +852,7 @@
       </div>
     </div>
     <p style="color:var(--accent2);font-weight:600;margin-bottom:18px;">⏳ Agle stock update tak ka countdown!</p>
-    <a href="https://www.instagram.com/adnan_makwani_003" target="_blank" class="btn-primary">
+    <a href="https://www.instagram.com/Makwani_mobile_shop_" target="_blank" class="btn-primary">
       📸 Instagram Follow Karo — Latest Deals ke liye
     </a>
   </div>
@@ -862,7 +989,14 @@
         <div class="contact-icon">📸</div>
         <div class="contact-item-text">
           <div class="label">Instagram</div>
-          <div class="value"><a href="https://instagram.com/adnan_makwani_003" target="_blank">@adnan_makwani_003</a></div>
+          <div class="value"><a href="https://www.instagram.com/Makwani_mobile_shop_" target="_blank">@Makwani_mobile_shop_</a></div>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">🔵</div>
+        <div class="contact-item-text">
+          <div class="label">Facebook</div>
+          <div class="value"><a href="https://www.facebook.com/share/18f27Q4VA2/" target="_blank">Makwani Mobile Shop</a></div>
         </div>
       </div>
       <div class="contact-item">
@@ -895,11 +1029,18 @@
           <div class="cta-val">+91 86008 18634</div>
         </div>
       </a>
-      <a href="https://instagram.com/adnan_makwani_003" target="_blank" rel="noopener" class="contact-cta-card">
+      <a href="https://www.instagram.com/Makwani_mobile_shop_" target="_blank" rel="noopener" class="contact-cta-card">
         <div class="cta-card-icon insta-bg">📸</div>
         <div class="cta-card-text">
           <div class="cta-label">Instagram Follow Karo</div>
-          <div class="cta-val">@adnan_makwani_003</div>
+          <div class="cta-val">@Makwani_mobile_shop_</div>
+        </div>
+      </a>
+      <a href="https://www.facebook.com/share/18f27Q4VA2/" target="_blank" rel="noopener" class="contact-cta-card">
+        <div class="cta-card-icon" style="background:rgba(24,119,242,0.15);">🔵</div>
+        <div class="cta-card-text">
+          <div class="cta-label">Facebook Pe Follow Karo</div>
+          <div class="cta-val">Makwani Mobile Shop</div>
         </div>
       </a>
     </div>
@@ -916,7 +1057,8 @@
     <a href="#accessories">Accessories</a>
     <a href="#delivery">Delivery</a>
     <a href="https://wa.me/918600818634" target="_blank">WhatsApp</a>
-    <a href="https://instagram.com/adnan_makwani_003" target="_blank">Instagram</a>
+    <a href="https://www.instagram.com/Makwani_mobile_shop_" target="_blank">Instagram</a>
+    <a href="https://www.facebook.com/share/18f27Q4VA2/" target="_blank">Facebook</a>
   </div>
   <div class="footer-copy">© 2026 Makwani Mobile Shop | Police Station ke Paas, Ner Parsopant, Yavatmal | ❤️ Bana hai aapke liye</div>
 </footer>
@@ -977,6 +1119,49 @@
   }
   updateCountdown();
   setInterval(updateCountdown,1000);
+
+  // IMAGE SLIDER
+  let currentSlide = 0;
+  const totalSlides = 5;
+  let autoSlideTimer;
+
+  function updateSlider() {
+    document.getElementById('sliderTrack').style.transform = 'translateX(-' + (currentSlide * 100) + '%)';
+    document.querySelectorAll('.sdot').forEach((d, i) => {
+      d.classList.toggle('active', i === currentSlide);
+    });
+  }
+
+  function changeSlide(dir) {
+    currentSlide = (currentSlide + dir + totalSlides) % totalSlides;
+    updateSlider();
+    resetAutoSlide();
+  }
+
+  function goToSlide(n) {
+    currentSlide = n;
+    updateSlider();
+    resetAutoSlide();
+  }
+
+  function resetAutoSlide() {
+    clearInterval(autoSlideTimer);
+    autoSlideTimer = setInterval(() => changeSlide(1), 3500);
+  }
+
+  // Touch/swipe support
+  let touchStartX = 0;
+  const track = document.getElementById('sliderTrack');
+  if (track) {
+    track.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, {passive:true});
+    track.addEventListener('touchend', e => {
+      const diff = touchStartX - e.changedTouches[0].clientX;
+      if (Math.abs(diff) > 40) changeSlide(diff > 0 ? 1 : -1);
+    }, {passive:true});
+  }
+
+  resetAutoSlide();
+
 </script>
 </body>
 </html>
