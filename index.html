@@ -660,6 +660,60 @@
   </div>
 </section>
 
+<!-- CHARGER SECTION -->
+<section style="background:var(--bg2);" id="chargers">
+  <div class="section-header reveal">
+    <div class="section-tag">Mobile Chargers</div>
+    <h2 class="section-title">Fast Chargers — <span>Warranty ke Saath!</span></h2>
+    <p class="section-desc">44W se 120W tak — sabhi phones ke liye. Tap karke bada dekho!</p>
+  </div>
+
+  <div class="slider-wrap reveal" style="max-width:500px;margin:0 auto 24px;">
+    <div class="slider-container">
+      <div class="slider-badge">⚡ Fast Charging</div>
+      <div class="slider-track" id="chrTrack">
+        <div class="slide" onclick="openLB('https://i.ibb.co/nvtDDFg/IMG-20260603-WA0013.jpg')">
+          <img src="https://i.ibb.co/nvtDDFg/IMG-20260603-WA0013.jpg" alt="44W Charger ₹199" loading="lazy" style="height:300px;object-fit:contain;background:#1a1a2e;cursor:zoom-in"/>
+          <div class="slide-caption" style="background:linear-gradient(transparent,rgba(0,0,0,.88))">
+            <div style="display:flex;justify-content:space-between;align-items:center">
+              <div><span style="background:var(--primary);padding:2px 10px;border-radius:50px;font-size:.8rem;font-weight:700">44W</span> &nbsp;Fast Charger<br><span style="font-size:.8rem;opacity:.8">Type-C compatible</span></div>
+              <div style="text-align:right"><span style="font-size:1.5rem;font-weight:800;color:var(--accent)">₹199</span><br><span style="font-size:.7rem;color:var(--accent2)">6 Month Warranty</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="slide" onclick="openLB('https://i.ibb.co/KjvNB6th/IMG-20260603-WA0015.jpg')">
+          <img src="https://i.ibb.co/KjvNB6th/IMG-20260603-WA0015.jpg" alt="80W Charger ₹349" loading="lazy" style="height:300px;object-fit:contain;background:#1a1a2e;cursor:zoom-in"/>
+          <div class="slide-caption" style="background:linear-gradient(transparent,rgba(0,0,0,.88))">
+            <div style="display:flex;justify-content:space-between;align-items:center">
+              <div><span style="background:var(--primary);padding:2px 10px;border-radius:50px;font-size:.8rem;font-weight:700">80W</span> &nbsp;Turbo Charger<br><span style="font-size:.8rem;opacity:.8">Super fast charging</span></div>
+              <div style="text-align:right"><span style="font-size:1.5rem;font-weight:800;color:var(--accent)">₹349</span><br><span style="font-size:.7rem;color:var(--accent2)">1 Year Warranty</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="slide" onclick="openLB('https://i.ibb.co/SDT7nhPZ/IMG-20260603-WA0014.jpg')">
+          <img src="https://i.ibb.co/SDT7nhPZ/IMG-20260603-WA0014.jpg" alt="120W Charger ₹449" loading="lazy" style="height:300px;object-fit:contain;background:#1a1a2e;cursor:zoom-in"/>
+          <div class="slide-caption" style="background:linear-gradient(transparent,rgba(0,0,0,.88))">
+            <div style="display:flex;justify-content:space-between;align-items:center">
+              <div><span style="background:var(--primary);padding:2px 10px;border-radius:50px;font-size:.8rem;font-weight:700">120W</span> &nbsp;Ultra Charger<br><span style="font-size:.8rem;opacity:.8">Fastest charging available</span></div>
+              <div style="text-align:right"><span style="font-size:1.5rem;font-weight:800;color:var(--accent)">₹449</span><br><span style="font-size:.7rem;color:var(--accent2)">1 Year Warranty</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="slider-btn slider-prev" onclick="changeChr(-1)" aria-label="Prev">‹</button>
+      <button class="slider-btn slider-next" onclick="changeChr(1)" aria-label="Next">›</button>
+    </div>
+    <div class="slider-dots" id="chrDots">
+      <button class="sdot active" onclick="goToChr(0)"></button>
+      <button class="sdot" onclick="goToChr(1)"></button>
+      <button class="sdot" onclick="goToChr(2)"></button>
+    </div>
+  </div>
+  <div style="text-align:center;margin-top:8px;">
+    <a href="https://wa.me/918600818634?text=Namaste!%20Mujhe%20charger%20chahiye.%20Konsa%20available%20hai%3F" target="_blank" class="btn btn-wa">💬 Charger Order on WhatsApp</a>
+  </div>
+</section>
+
 <!-- SERVICES -->
 <section id="services">
   <div class="section-header reveal">
@@ -1057,12 +1111,12 @@
 <section id="delivery" class="delivery-section">
   <div class="section-header reveal">
     <div class="section-tag">Home Delivery</div>
-    <h2 class="section-title">Ghar Baithe <span>Mobile Mangao!</span></h2>
+    <h2 class="section-title">Ghar Baithe <span>Home Delivery!</span></h2>
     <p class="section-desc">Dukaan door hai? Koi baat nahi — hum ghar tak pahuncha denge</p>
   </div>
   <div class="delivery-card reveal">
     <span class="delivery-map-emoji">🚚</span>
-    <h3>30km Tak Free Delivery!</h3>
+    <h3>30km Tak Home Delivery!</h3>
     <p>Ner Parsopant aur aas-paas ke 30km ke andar — ghar baithe order karo. WhatsApp pe photo share karo, confirm karo, aur delivery aa jaayegi!</p>
     <div class="delivery-badges">
       <span class="del-badge">📍 Ner Parsopant — Home Delivery!</span>
@@ -1380,7 +1434,7 @@
   function updateCable(){ document.getElementById('cableTrack').style.transform='translateX(-'+(cSlide*100)+'%)'; document.querySelectorAll('#cableDots .sdot').forEach((d,i)=>d.classList.toggle('active',i===cSlide)); }
   function changeCable(d){ cSlide=(cSlide+d+cTotal)%cTotal; updateCable(); resetCable(); }
   function goToCable(n){ cSlide=n; updateCable(); resetCable(); }
-  function resetCable(){ clearInterval(cTimer); cTimer=setInterval(()=>changeCable(1),4000); }
+  function resetCable(){ clearInterval(cTimer); cTimer=setInterval(()=>changeCable(1),6000); }
   const ct=document.getElementById('cableTrack');
   if(ct){ let cx=0; ct.addEventListener('touchstart',e=>{cx=e.touches[0].clientX;},{passive:true}); ct.addEventListener('touchend',e=>{const d=cx-e.changedTouches[0].clientX;if(Math.abs(d)>40)changeCable(d>0?1:-1);},{passive:true}); }
   resetCable();
@@ -1390,10 +1444,21 @@
   function updateHp(){ document.getElementById('hpTrack').style.transform='translateX(-'+(hSlide*100)+'%)'; document.querySelectorAll('#hpDots .sdot').forEach((d,i)=>d.classList.toggle('active',i===hSlide)); }
   function changeHp(d){ hSlide=(hSlide+d+hTotal)%hTotal; updateHp(); resetHp(); }
   function goToHp(n){ hSlide=n; updateHp(); resetHp(); }
-  function resetHp(){ clearInterval(hTimer); hTimer=setInterval(()=>changeHp(1),4000); }
+  function resetHp(){ clearInterval(hTimer); hTimer=setInterval(()=>changeHp(1),6000); }
   const ht=document.getElementById('hpTrack');
   if(ht){ let hx=0; ht.addEventListener('touchstart',e=>{hx=e.touches[0].clientX;},{passive:true}); ht.addEventListener('touchend',e=>{const d=hx-e.changedTouches[0].clientX;if(Math.abs(d)>40)changeHp(d>0?1:-1);},{passive:true}); }
   resetHp();
+
+  // CHARGER SLIDER
+  let chrSlide=0; const chrTotal=3; let chrTimer;
+  function updateChr(){ document.getElementById('chrTrack').style.transform='translateX(-'+(chrSlide*100)+'%)'; document.querySelectorAll('#chrDots .sdot').forEach((d,i)=>d.classList.toggle('active',i===chrSlide)); }
+  function changeChr(d){ chrSlide=(chrSlide+d+chrTotal)%chrTotal; updateChr(); resetChr(); }
+  function goToChr(n){ chrSlide=n; updateChr(); resetChr(); }
+  function resetChr(){ clearInterval(chrTimer); chrTimer=setInterval(()=>changeChr(1),6000); }
+  const chrt=document.getElementById('chrTrack');
+  if(chrt){ let cx=0; chrt.addEventListener('touchstart',e=>{cx=e.touches[0].clientX;},{passive:true}); chrt.addEventListener('touchend',e=>{const d=cx-e.changedTouches[0].clientX;if(Math.abs(d)>40)changeChr(d>0?1:-1);},{passive:true}); }
+  resetChr();
+
 
   }
 
@@ -1407,7 +1472,7 @@
   function updateCable(){ document.getElementById('cableTrack').style.transform='translateX(-'+(cSlide*100)+'%)'; document.querySelectorAll('#cableDots .sdot').forEach((d,i)=>d.classList.toggle('active',i===cSlide)); }
   function changeCable(d){ cSlide=(cSlide+d+cTotal)%cTotal; updateCable(); resetCable(); }
   function goToCable(n){ cSlide=n; updateCable(); resetCable(); }
-  function resetCable(){ clearInterval(cTimer); cTimer=setInterval(()=>changeCable(1),4000); }
+  function resetCable(){ clearInterval(cTimer); cTimer=setInterval(()=>changeCable(1),6000); }
   const ct=document.getElementById('cableTrack');
   if(ct){ let cx=0; ct.addEventListener('touchstart',e=>{cx=e.touches[0].clientX;},{passive:true}); ct.addEventListener('touchend',e=>{const d=cx-e.changedTouches[0].clientX;if(Math.abs(d)>40)changeCable(d>0?1:-1);},{passive:true}); }
   resetCable();
@@ -1417,10 +1482,21 @@
   function updateHp(){ document.getElementById('hpTrack').style.transform='translateX(-'+(hSlide*100)+'%)'; document.querySelectorAll('#hpDots .sdot').forEach((d,i)=>d.classList.toggle('active',i===hSlide)); }
   function changeHp(d){ hSlide=(hSlide+d+hTotal)%hTotal; updateHp(); resetHp(); }
   function goToHp(n){ hSlide=n; updateHp(); resetHp(); }
-  function resetHp(){ clearInterval(hTimer); hTimer=setInterval(()=>changeHp(1),4000); }
+  function resetHp(){ clearInterval(hTimer); hTimer=setInterval(()=>changeHp(1),6000); }
   const ht=document.getElementById('hpTrack');
   if(ht){ let hx=0; ht.addEventListener('touchstart',e=>{hx=e.touches[0].clientX;},{passive:true}); ht.addEventListener('touchend',e=>{const d=hx-e.changedTouches[0].clientX;if(Math.abs(d)>40)changeHp(d>0?1:-1);},{passive:true}); }
   resetHp();
+
+  // CHARGER SLIDER
+  let chrSlide=0; const chrTotal=3; let chrTimer;
+  function updateChr(){ document.getElementById('chrTrack').style.transform='translateX(-'+(chrSlide*100)+'%)'; document.querySelectorAll('#chrDots .sdot').forEach((d,i)=>d.classList.toggle('active',i===chrSlide)); }
+  function changeChr(d){ chrSlide=(chrSlide+d+chrTotal)%chrTotal; updateChr(); resetChr(); }
+  function goToChr(n){ chrSlide=n; updateChr(); resetChr(); }
+  function resetChr(){ clearInterval(chrTimer); chrTimer=setInterval(()=>changeChr(1),6000); }
+  const chrt=document.getElementById('chrTrack');
+  if(chrt){ let cx=0; chrt.addEventListener('touchstart',e=>{cx=e.touches[0].clientX;},{passive:true}); chrt.addEventListener('touchend',e=>{const d=cx-e.changedTouches[0].clientX;if(Math.abs(d)>40)changeChr(d>0?1:-1);},{passive:true}); }
+  resetChr();
+
 
   }
 
@@ -1447,7 +1523,7 @@
   function updateCable(){ document.getElementById('cableTrack').style.transform='translateX(-'+(cSlide*100)+'%)'; document.querySelectorAll('#cableDots .sdot').forEach((d,i)=>d.classList.toggle('active',i===cSlide)); }
   function changeCable(d){ cSlide=(cSlide+d+cTotal)%cTotal; updateCable(); resetCable(); }
   function goToCable(n){ cSlide=n; updateCable(); resetCable(); }
-  function resetCable(){ clearInterval(cTimer); cTimer=setInterval(()=>changeCable(1),4000); }
+  function resetCable(){ clearInterval(cTimer); cTimer=setInterval(()=>changeCable(1),6000); }
   const ct=document.getElementById('cableTrack');
   if(ct){ let cx=0; ct.addEventListener('touchstart',e=>{cx=e.touches[0].clientX;},{passive:true}); ct.addEventListener('touchend',e=>{const d=cx-e.changedTouches[0].clientX;if(Math.abs(d)>40)changeCable(d>0?1:-1);},{passive:true}); }
   resetCable();
@@ -1457,10 +1533,21 @@
   function updateHp(){ document.getElementById('hpTrack').style.transform='translateX(-'+(hSlide*100)+'%)'; document.querySelectorAll('#hpDots .sdot').forEach((d,i)=>d.classList.toggle('active',i===hSlide)); }
   function changeHp(d){ hSlide=(hSlide+d+hTotal)%hTotal; updateHp(); resetHp(); }
   function goToHp(n){ hSlide=n; updateHp(); resetHp(); }
-  function resetHp(){ clearInterval(hTimer); hTimer=setInterval(()=>changeHp(1),4000); }
+  function resetHp(){ clearInterval(hTimer); hTimer=setInterval(()=>changeHp(1),6000); }
   const ht=document.getElementById('hpTrack');
   if(ht){ let hx=0; ht.addEventListener('touchstart',e=>{hx=e.touches[0].clientX;},{passive:true}); ht.addEventListener('touchend',e=>{const d=hx-e.changedTouches[0].clientX;if(Math.abs(d)>40)changeHp(d>0?1:-1);},{passive:true}); }
   resetHp();
+
+  // CHARGER SLIDER
+  let chrSlide=0; const chrTotal=3; let chrTimer;
+  function updateChr(){ document.getElementById('chrTrack').style.transform='translateX(-'+(chrSlide*100)+'%)'; document.querySelectorAll('#chrDots .sdot').forEach((d,i)=>d.classList.toggle('active',i===chrSlide)); }
+  function changeChr(d){ chrSlide=(chrSlide+d+chrTotal)%chrTotal; updateChr(); resetChr(); }
+  function goToChr(n){ chrSlide=n; updateChr(); resetChr(); }
+  function resetChr(){ clearInterval(chrTimer); chrTimer=setInterval(()=>changeChr(1),6000); }
+  const chrt=document.getElementById('chrTrack');
+  if(chrt){ let cx=0; chrt.addEventListener('touchstart',e=>{cx=e.touches[0].clientX;},{passive:true}); chrt.addEventListener('touchend',e=>{const d=cx-e.changedTouches[0].clientX;if(Math.abs(d)>40)changeChr(d>0?1:-1);},{passive:true}); }
+  resetChr();
+
 
 
 </script>
