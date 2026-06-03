@@ -25,7 +25,7 @@
     "address":{"@type":"PostalAddress","streetAddress":"Police Station ke Paas","addressLocality":"Ner Parsopant","addressRegion":"Yavatmal, Maharashtra","addressCountry":"IN"},
     "openingHours":"Mo-Su 09:00-21:00",
     "priceRange":"₹",
-    "sameAs":["https://www.instagram.com/makwanimobileshop"]
+    "sameAs":["https://https://www.instagram.com/makwanimobileshop"]
   }
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -112,7 +112,7 @@
     /* MARQUEE */
     .marquee-wrap { background:linear-gradient(90deg,var(--primary),#ff8c33,var(--accent),var(--primary)); background-size:300%; animation:gradShift 4s infinite linear; overflow:hidden; padding:10px 0; position:relative; z-index:1; }
     @keyframes gradShift { 0%{background-position:0%} 100%{background-position:300%} }
-    .marquee-inner { display:flex; animation:marqueeScroll 25s linear infinite; white-space:nowrap; }
+    .marquee-inner { display:flex; animation:marqueeScroll 18s linear infinite; white-space:nowrap; }
     .marquee-inner span { font-family:'Baloo 2',cursive; font-weight:700; font-size:0.9rem; color:white; padding:0 28px; }
     .marquee-inner .dot-sep { color:rgba(255,255,255,0.5); }
     @keyframes marqueeScroll { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
@@ -291,6 +291,38 @@
     .sdot.active { background:var(--primary); transform:scale(1.3); }
     .slider-badge { position:absolute; top:16px; left:16px; background:linear-gradient(135deg,var(--primary),var(--primary-dark)); color:#fff; padding:6px 14px; border-radius:50px; font-family:'Baloo 2',cursive; font-size:.82rem; font-weight:700; z-index:5; box-shadow:0 4px 12px rgba(255,107,0,.4); }
 
+
+    /* DATA CABLE SECTION */
+    .cable-section { background: var(--bg2); }
+    .cable-intro { text-align:center; margin-bottom:30px; }
+    .cable-intro p { color:var(--text-muted); font-size:1rem; margin-bottom:8px; }
+    .cable-warranty-note { display:inline-block; background:rgba(0,212,170,.12); border:1px solid rgba(0,212,170,.3); color:var(--accent2); padding:6px 16px; border-radius:50px; font-size:.85rem; font-weight:600; margin-bottom:30px; }
+    .cable-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,1fr)); gap:16px; max-width:860px; margin:0 auto 30px; }
+    .cable-card { background:var(--card-bg); border:1px solid var(--card-border); border-radius:16px; overflow:hidden; transition:all .3s; cursor:pointer; position:relative; }
+    .cable-card:hover { transform:translateY(-5px); border-color:var(--primary); box-shadow:0 8px 28px rgba(255,107,0,.2); }
+    .cable-card img { width:100%; height:160px; object-fit:cover; display:block; transition:transform .4s; }
+    .cable-card:hover img { transform:scale(1.06); }
+    .cable-card-body { padding:12px 12px 14px; }
+    .cable-watt-badge { display:inline-block; background:linear-gradient(135deg,var(--primary),var(--primary-dark)); color:#fff; padding:3px 10px; border-radius:50px; font-size:.75rem; font-weight:700; margin-bottom:7px; }
+    .cable-card-body h4 { font-size:.95rem; font-weight:700; margin-bottom:4px; }
+    .cable-card-body p { font-size:.78rem; color:var(--text-muted); margin-bottom:8px; }
+    .cable-price-row { display:flex; align-items:center; justify-content:space-between; }
+    .cable-price { font-family:'Baloo 2',cursive; font-size:1.3rem; font-weight:800; color:var(--primary); }
+    .cable-war { font-size:.7rem; font-weight:600; padding:2px 8px; border-radius:50px; }
+    .war-1y { background:rgba(255,215,0,.15); border:1px solid rgba(255,215,0,.3); color:var(--accent); }
+    .war-6m { background:rgba(0,212,170,.12); border:1px solid rgba(0,212,170,.3); color:var(--accent2); }
+    .war-no { background:rgba(255,255,255,.07); border:1px solid rgba(255,255,255,.15); color:var(--text-muted); }
+    .cable-basic-row { display:flex; gap:12px; justify-content:center; flex-wrap:wrap; margin-bottom:24px; }
+    .cable-basic-card { background:var(--card-bg); border:1px solid var(--card-border); border-radius:12px; padding:12px 18px; text-align:center; min-width:130px; transition:all .3s; }
+    .cable-basic-card:hover { border-color:var(--primary); transform:translateY(-3px); }
+    .cable-basic-card .bp { font-family:'Baloo 2',cursive; font-size:1.2rem; font-weight:800; color:var(--primary); }
+    .cable-basic-card .bl { font-size:.78rem; color:var(--text-muted); }
+    /* Lightbox */
+    .lb-overlay { display:none; position:fixed; inset:0; background:rgba(0,0,0,.9); z-index:9998; align-items:center; justify-content:center; }
+    .lb-overlay.open { display:flex; }
+    .lb-overlay img { max-width:92vw; max-height:88vh; border-radius:12px; object-fit:contain; }
+    .lb-close { position:absolute; top:18px; right:20px; color:#fff; font-size:2rem; cursor:pointer; background:rgba(255,107,0,.7); border:none; width:44px; height:44px; border-radius:50%; display:flex; align-items:center; justify-content:center; }
+
     /* MOBILE MENU */
     @media (max-width: 768px) {
       .nav-links { position:fixed; top:0; right:-100%; width:75%; height:100vh; background:var(--bg2); flex-direction:column; align-items:flex-start; padding:80px 30px 30px; gap:4px; transition:right 0.35s ease; border-left:1px solid var(--card-border); z-index:999; }
@@ -363,18 +395,19 @@
       Seedha <span class="highlight">Budget</span> Mein<br/>Best Mobile Milega!
     </h1>
     <p class="hero-sub">
-      Keypad Phones <strong>₹499 se</strong> — 2nd Hand Mobiles <strong>₹2000 se shuru</strong> — iPhone, Samsung, OnePlus. Repairing ⚡ <strong>15 Minute mein Display fix!</strong> — sab ek jagah!
+      Keypad Phone <strong>₹499 se</strong> | Smartphone <strong>₹7999 se</strong> | 2nd Hand <strong>₹2000 se</strong> — Repairing ⚡ <strong>15 Min Display Fix!</strong> — sab ek jagah!
     </p>
     <div class="hero-pills">
       <span class="hero-pill">📱 2nd Hand ₹2000 se</span>
       <span class="hero-pill gold">📞 Keypad Phone ₹499 se</span>
+      <span class="hero-pill y">📱 Smartphone ₹7999 se</span>
       <span class="hero-pill green">🚚 Home Delivery 30km</span>
       <span class="hero-pill">🛡️ 3 Month Warranty</span>
       <span class="hero-pill gold">📦 Bulk Lot ₹2000 se</span>
     </div>
     <div class="hero-btns">
       <a href="#prices" class="btn-primary">📱 Prices Dekho</a>
-      <a href="https://wa.me/918600818634?text=Namaste!%20Kya%20mobile%20available%20hai?" target="_blank" class="btn-wa">💬 WhatsApp pe Puchho</a>
+      <a href="https://wa.me/918600818634?text=Namaste!%20Mujhe%20aapke%20products%20ke%20baare%20mein%20puchna%20tha.%20Kya%20aap%20help%20kar%20sakte%20hain%3F" target="_blank" class="btn-wa">💬 WhatsApp pe Puchho</a>
     </div>
     <div class="hero-stats">
       <div class="stat-item">
@@ -465,6 +498,98 @@
     </div>
   </div>
 </section>
+
+<!-- DATA CABLE SECTION -->
+<section class="cable-section" id="cables">
+  <div class="section-header reveal">
+    <div class="section-tag">Data Cables</div>
+    <h2 class="section-title">Fast Charging Cables — <span>Saste Mein!</span></h2>
+    <p class="section-desc">44W se 200W tak — Type-C, Micro USB, iPhone — sabhi type available. Tap karke photo dekho!</p>
+  </div>
+
+  <div style="text-align:center;margin-bottom:24px;">
+    <span class="cable-warranty-note">🛡️ 1 Year Warranty wale cables available — Quality Guaranteed!</span>
+  </div>
+
+  <!-- PREMIUM CABLES with photos -->
+  <div class="cable-grid reveal">
+    <div class="cable-card" onclick="openLB('https://i.ibb.co/BKQQ8sFB/IMG-20260603-WA0000.jpg')">
+      <img src="https://i.ibb.co/BKQQ8sFB/IMG-20260603-WA0000.jpg" alt="44W Fast Charging Cable" loading="lazy" />
+      <div class="cable-card-body">
+        <span class="cable-watt-badge">44W</span>
+        <h4>Super Fast Cable</h4>
+        <p>Type-C / Micro — durable braided</p>
+        <div class="cable-price-row">
+          <span class="cable-price">₹149</span>
+          <span class="cable-war war-1y">1 Yr Warranty</span>
+        </div>
+      </div>
+    </div>
+    <div class="cable-card" onclick="openLB('https://i.ibb.co/GfGsthky/IMG-20260603-WA0001.jpg')">
+      <img src="https://i.ibb.co/GfGsthky/IMG-20260603-WA0001.jpg" alt="65W Turbo Charging Cable" loading="lazy" />
+      <div class="cable-card-body">
+        <span class="cable-watt-badge">65W</span>
+        <h4>Turbo Charge Cable</h4>
+        <p>Type-C — premium copper core</p>
+        <div class="cable-price-row">
+          <span class="cable-price">₹179</span>
+          <span class="cable-war war-1y">1 Yr Warranty</span>
+        </div>
+      </div>
+    </div>
+    <div class="cable-card" onclick="openLB('https://i.ibb.co/WpNX7nvB/IMG-20260603-WA0003.jpg')">
+      <img src="https://i.ibb.co/WpNX7nvB/IMG-20260603-WA0003.jpg" alt="120W Ultra Fast Cable" loading="lazy" />
+      <div class="cable-card-body">
+        <span class="cable-watt-badge">120W</span>
+        <h4>Ultra Fast Cable</h4>
+        <p>Premium silicone — heat proof</p>
+        <div class="cable-price-row">
+          <span class="cable-price">₹199</span>
+          <span class="cable-war war-1y">1 Yr Warranty</span>
+        </div>
+      </div>
+    </div>
+    <div class="cable-card" onclick="openLB('https://i.ibb.co/tPn91Ygf/IMG-20260603-WA0002.jpg')">
+      <img src="https://i.ibb.co/tPn91Ygf/IMG-20260603-WA0002.jpg" alt="200W Super Fast Cable" loading="lazy" />
+      <div class="cable-card-body">
+        <span class="cable-watt-badge">200W</span>
+        <h4>Super Fast Cable</h4>
+        <p>Type-C / Micro — heavy duty</p>
+        <div class="cable-price-row">
+          <span class="cable-price">₹249</span>
+          <span class="cable-war war-1y">1 Yr Warranty</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BASIC CABLES -->
+  <div style="text-align:center;margin-bottom:16px;">
+    <p style="color:var(--text-muted);font-size:.9rem;margin-bottom:12px;">Budget cables bhi available hain:</p>
+  </div>
+  <div class="cable-basic-row reveal">
+    <div class="cable-basic-card">
+      <div class="bp">₹30</div>
+      <div class="bl">Basic Cable</div>
+      <div style="font-size:.7rem;color:var(--text-muted)">No Warranty</div>
+    </div>
+    <div class="cable-basic-card">
+      <div class="bp">₹79</div>
+      <div class="bl">Good Cable</div>
+      <div style="font-size:.7rem;color:var(--accent2)">6 Month Warranty</div>
+    </div>
+  </div>
+
+  <div style="text-align:center;margin-top:8px;">
+    <a href="https://wa.me/918600818634?text=Namaste!%20Mujhe%20data%20cable%20chahiye.%20Konsa%20available%20hai%3F" target="_blank" class="btn btn-wa">💬 Cable Order on WhatsApp</a>
+  </div>
+</section>
+
+<!-- LIGHTBOX -->
+<div class="lb-overlay" id="lbOverlay" onclick="closeLB()">
+  <button class="lb-close" onclick="closeLB()">✕</button>
+  <img id="lbImg" src="" alt="Cable Photo" />
+</div>
 
 <!-- SERVICES -->
 <section id="services">
@@ -853,7 +978,7 @@
       </div>
     </div>
     <p style="color:var(--accent2);font-weight:600;margin-bottom:18px;">⏳ Agle stock update tak ka countdown!</p>
-    <a href="https://www.instagram.com/makwanimobileshop" target="_blank" class="btn-primary">
+    <a href="https://https://www.instagram.com/makwanimobileshop" target="_blank" class="btn-primary">
       📸 Instagram Follow Karo — Latest Deals ke liye
     </a>
   </div>
@@ -1033,7 +1158,7 @@
         <div class="contact-icon">📸</div>
         <div class="contact-item-text">
           <div class="label">Instagram</div>
-          <div class="value"><a href="https://www.instagram.com/makwanimobileshop" target="_blank">@makwanimobileshop</a></div>
+          <div class="value"><a href="https://https://www.instagram.com/makwanimobileshop" target="_blank">@makwanimobileshop</a></div>
         </div>
       </div>
       <div class="contact-item">
@@ -1073,7 +1198,7 @@
           <div class="cta-val">+91 86008 18634</div>
         </div>
       </a>
-      <a href="https://www.instagram.com/makwanimobileshop" target="_blank" rel="noopener" class="contact-cta-card">
+      <a href="https://https://www.instagram.com/makwanimobileshop" target="_blank" rel="noopener" class="contact-cta-card">
         <div class="cta-card-icon insta-bg">📸</div>
         <div class="cta-card-text">
           <div class="cta-label">Instagram Follow Karo</div>
@@ -1101,7 +1226,7 @@
     <a href="#accessories">Accessories</a>
     <a href="#delivery">Delivery</a>
     <a href="https://wa.me/918600818634" target="_blank">WhatsApp</a>
-    <a href="https://www.instagram.com/makwanimobileshop" target="_blank">Instagram</a>
+    <a href="https://https://www.instagram.com/makwanimobileshop" target="_blank">Instagram</a>
     <a href="https://www.facebook.com/share/18f27Q4VA2/" target="_blank">Facebook</a>
   </div>
   <div class="footer-copy">© 2026 Makwani Mobile Shop | Police Station ke Paas, Ner Parsopant, Yavatmal | ❤️ Bana hai aapke liye</div>
