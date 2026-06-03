@@ -1232,11 +1232,11 @@
 
     <div style="background:rgba(255,255,255,0.04);border-radius:18px;overflow:hidden;border:1px solid rgba(255,107,0,0.2);box-shadow:0 8px 32px rgba(255,107,0,0.15);">
       <div style="width:100%;height:320px;overflow:hidden;background:#0d0d1a;">
-        <img src="https://i.ibb.co/Fbk5nnfn/adnan-makwani-003-20230925-0001.jpg" alt="Adnan Makwani Expert Mobile Repairing" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;image-rendering:auto;" loading="eager" />
+        <img src="https://i.ibb.co/Fbk5nnfn/adnan-makwani-003-20230925-0001.jpg" alt="Adnan Makwani - Owner Makwani Mobile Shop" style="width:100%;height:100%;object-fit:cover;object-position:center center;display:block;" loading="eager" />
       </div>
       <div style="padding:18px;">
-        <h3 style="margin-bottom:8px;">👨‍💼 Adnan Makwani — Owner & Expert</h3>
-        <p style="color:#bdbdd7;">Makwani Mobile Shop ke owner. 5+ saalon ka experience. Display, charging, software aur motherboard repairing — fast, reliable aur affordable. Aapka phone hamaare haathon mein safe hai!</p>
+        <h3 style="margin-bottom:8px;">👨‍💼 Adnan Makwani — Owner</h3>
+        <p style="color:#bdbdd7;">Makwani Mobile Shop ke founder aur expert technician. 5+ saal ka experience mobile repairing mein. Display, charging, software, motherboard — sab personally handle karte hain. Aapka phone safe haathon mein hai!</p>
       </div>
     </div>
 
@@ -1356,54 +1356,54 @@
 </footer>
 
 <script>
-  // STARS
+  // ══ STARS ══
   const sc = document.getElementById('stars');
-  for(let i=0;i<80;i++){
+  for(let i=0;i<70;i++){
     const s=document.createElement('div');
     s.className='star';
     s.style.left=Math.random()*100+'%';
     s.style.top=Math.random()*100+'%';
-    s.style.setProperty('--d',(2+Math.random()*4)+'s');
     s.style.animationDelay=(Math.random()*4)+'s';
+    s.style.setProperty('--d',(2+Math.random()*4)+'s');
     sc.appendChild(s);
   }
 
-  // HAMBURGER
+  // ══ HAMBURGER ══
   function toggleMenu(){
-    document.getElementById('navLinks').classList.toggle('open');
+    const nl=document.getElementById('navLinks');
+    const hb=document.getElementById('hamburger');
+    const open=nl.classList.toggle('open');
+    if(hb) hb.setAttribute('aria-expanded',open);
   }
   document.querySelectorAll('#navLinks a').forEach(a=>{
-    a.addEventListener('click',()=>document.getElementById('navLinks').classList.remove('open'));
+    a.addEventListener('click',()=>{
+      document.getElementById('navLinks').classList.remove('open');
+      const hb=document.getElementById('hamburger');
+      if(hb) hb.setAttribute('aria-expanded','false');
+    });
   });
 
-  // NAVBAR SCROLL
+  // ══ NAVBAR SCROLL ══
   window.addEventListener('scroll',()=>{
     const nav=document.getElementById('navbar');
-    nav.style.padding=window.scrollY>60?'10px 5%':'14px 5%';
+    if(nav) nav.style.padding=window.scrollY>50?'10px 5%':'14px 5%';
+  },{passive:true});
+
+  // ══ SCROLL REVEAL ══
+  document.querySelectorAll('.reveal').forEach(el=>{
+    new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('visible'); });
+    },{threshold:0.1}).observe(el);
   });
 
-  // SCROLL REVEAL
-  const revealEls=document.querySelectorAll('.reveal');
-  const obs=new IntersectionObserver((entries)=>{
-    entries.forEach(e=>{
-      if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}
-    });
-  },{threshold:0.1});
-  revealEls.forEach(el=>obs.observe(el));
-
-  // COUNTDOWN to next Sunday
+  // ══ COUNTDOWN ══
   function getNextSunday(){
-    const now=new Date();
-    const day=now.getDay();
-    const diff=(7-day)%7||7;
-    const next=new Date(now);
-    next.setDate(now.getDate()+diff);
-    next.setHours(0,0,0,0);
-    return next;
+    const now=new Date(),d=now.getDay(),diff=(7-d)%7||7,n=new Date(now);
+    n.setDate(now.getDate()+diff); n.setHours(0,0,0,0); return n;
   }
   function updateCountdown(){
     const diff=getNextSunday()-new Date();
-    if(diff<=0)return;
+    if(diff<=0) return;
     document.getElementById('days').textContent=String(Math.floor(diff/86400000)).padStart(2,'0');
     document.getElementById('hours').textContent=String(Math.floor((diff%86400000)/3600000)).padStart(2,'0');
     document.getElementById('mins').textContent=String(Math.floor((diff%3600000)/60000)).padStart(2,'0');
@@ -1412,30 +1412,68 @@
   updateCountdown();
   setInterval(updateCountdown,1000);
 
-  // ══ SLIDER ENGINE (isolated per slider) ══
-  function makeSlider(trackId, dotsId, total, interval) {
-    let cur = 0, timer;
-    const track = document.getElementById(trackId);
-    const dotsEl = document.getElementById(dotsId);
-    if (!track) return;
+  // ══ LIGHTBOX ══
+  function openLB(src){
+    document.getElementById('lbImg').src=src;
+    document.getElementById('lbOverlay').classList.add('open');
+    document.body.style.overflow='hidden';
+  }
+  function closeLB(){
+    document.getElementById('lbOverlay').classList.remove('open');
+    document.body.style.overflow='';
+  }
+  document.addEventListener('keydown',e=>{ if(e.key==='Escape') closeLB(); });
 
-    function update() {
-      track.style.transition = 'transform 0.45s cubic-bezier(0.4,0,0.2,1)';
+  // ══ UNIVERSAL SLIDER ENGINE ══
+  function makeSlider(trackId, dotsId, total, autoMs) {
+    let cur = 0, timer, locked = false;
+    const track = document.getElementById(trackId);
+    if (!track) return { next:()=>{}, prev:()=>{}, goTo:()=>{} };
+
+    function render() {
       track.style.transform = 'translateX(-' + (cur * 100) + '%)';
+      const dotsEl = document.getElementById(dotsId);
       if (dotsEl) dotsEl.querySelectorAll('.sdot').forEach((d,i) => d.classList.toggle('active', i===cur));
     }
 
-    function next() { cur = (cur + 1) % total; update(); }
-    function prev() { cur = (cur - 1 + total) % total; update(); }
-    function goTo(n) { cur = n; update(); resetTimer(); }
-    function resetTimer() { clearInterval(timer); timer = setInterval(next, interval); }
+    function go(n) {
+      if (locked) return;
+      locked = true;
+      cur = ((n % total) + total) % total;
+      render();
+      setTimeout(() => locked = false, 500);
+    }
+
+    function next() { go(cur + 1); }
+    function prev() { go(cur - 1); }
+    function goTo(n) { go(n); resetTimer(); }
+
+    function resetTimer() {
+      clearInterval(timer);
+      timer = setInterval(next, autoMs);
+    }
 
     // Touch swipe
-    let tx = 0;
-    track.addEventListener('touchstart', e => { tx = e.touches[0].clientX; clearInterval(timer); }, {passive:true});
+    let tx = 0, ty = 0, swiping = false;
+    track.addEventListener('touchstart', e => {
+      tx = e.touches[0].clientX;
+      ty = e.touches[0].clientY;
+      swiping = true;
+      clearInterval(timer);
+    }, {passive:true});
+
+    track.addEventListener('touchmove', e => {
+      if (!swiping) return;
+      const dx = Math.abs(e.touches[0].clientX - tx);
+      const dy = Math.abs(e.touches[0].clientY - ty);
+      if (dx > dy && dx > 8) e.preventDefault();
+    }, {passive:false});
+
     track.addEventListener('touchend', e => {
+      if (!swiping) return;
+      swiping = false;
       const diff = tx - e.changedTouches[0].clientX;
-      if (Math.abs(diff) > 40) { diff > 0 ? next() : prev(); }
+      if (Math.abs(diff) > 45) { diff > 0 ? next() : prev(); }
       resetTimer();
     }, {passive:true});
 
@@ -1443,114 +1481,21 @@
     return { next, prev, goTo };
   }
 
-  // Init all sliders
-  const lotSlider  = makeSlider('sliderTrack', 'sliderDots',  5, 4000);
-  const cableSlider = makeSlider('cableTrack',  'cableDots',   4, 6000);
-  const hpSlider   = makeSlider('hpTrack',     'hpDots',      5, 6000);
-  const chrSlider  = makeSlider('chrTrack',    'chrDots',     3, 6000);
+  // ══ INIT ALL SLIDERS ══
+  const lotSlider   = makeSlider('sliderTrack', 'sliderDots', 5, 4000);
+  const cableSlider = makeSlider('cableTrack',  'cableDots',  4, 6500);
+  const hpSlider    = makeSlider('hpTrack',     'hpDots',     5, 6500);
+  const chrSlider   = makeSlider('chrTrack',    'chrDots',    3, 6500);
 
-  // Global functions for onclick buttons
-  function changeSlide(d){ d>0 ? lotSlider.next() : lotSlider.prev(); }
-  function goToSlide(n){ lotSlider.goTo(n); }
+  // ══ BUTTON HANDLERS ══
+  function changeSlide(d){ d>0 ? lotSlider.next()   : lotSlider.prev(); }
+  function goToSlide(n)  { lotSlider.goTo(n); }
   function changeCable(d){ d>0 ? cableSlider.next() : cableSlider.prev(); }
-  function goToCable(n){ cableSlider.goTo(n); }
-  function changeHp(d){ d>0 ? hpSlider.next() : hpSlider.prev(); }
-  function goToHp(n){ hpSlider.goTo(n); }
-  function changeChr(d){ d>0 ? chrSlider.next() : chrSlider.prev(); }
-  function goToChr(n){ chrSlider.goTo(n); }
-
-
-
-  }
-
-  function goToSlide(n) {
-    currentSlide = n;
-    updateSlider();
-    resetAutoSlide();
-
-  // CABLE SLIDER
-  let cSlide=0; const cTotal=4; let cTimer;
-  function updateCable(){ document.getElementById('cableTrack').style.transform='translateX(-'+(cSlide*100)+'%)'; document.querySelectorAll('#cableDots .sdot').forEach((d,i)=>d.classList.toggle('active',i===cSlide)); }
-  function changeCable(d){ cSlide=(cSlide+d+cTotal)%cTotal; updateCable(); resetCable(); }
-  function goToCable(n){ cSlide=n; updateCable(); resetCable(); }
-  function resetCable(){ clearInterval(cTimer); cTimer=setInterval(()=>changeCable(1),6000); }
-  const ct=document.getElementById('cableTrack');
-  if(ct){ let cx=0; ct.addEventListener('touchstart',e=>{cx=e.touches[0].clientX;},{passive:true}); ct.addEventListener('touchend',e=>{const d=cx-e.changedTouches[0].clientX;if(Math.abs(d)>40)changeCable(d>0?1:-1);},{passive:true}); }
-  resetCable();
-
-  // HEADPHONE SLIDER
-  let hSlide=0; const hTotal=5; let hTimer;
-  function updateHp(){ document.getElementById('hpTrack').style.transform='translateX(-'+(hSlide*100)+'%)'; document.querySelectorAll('#hpDots .sdot').forEach((d,i)=>d.classList.toggle('active',i===hSlide)); }
-  function changeHp(d){ hSlide=(hSlide+d+hTotal)%hTotal; updateHp(); resetHp(); }
-  function goToHp(n){ hSlide=n; updateHp(); resetHp(); }
-  function resetHp(){ clearInterval(hTimer); hTimer=setInterval(()=>changeHp(1),6000); }
-  const ht=document.getElementById('hpTrack');
-  if(ht){ let hx=0; ht.addEventListener('touchstart',e=>{hx=e.touches[0].clientX;},{passive:true}); ht.addEventListener('touchend',e=>{const d=hx-e.changedTouches[0].clientX;if(Math.abs(d)>40)changeHp(d>0?1:-1);},{passive:true}); }
-  resetHp();
-
-  // CHARGER SLIDER
-  let chrSlide=0; const chrTotal=3; let chrTimer;
-  function updateChr(){ document.getElementById('chrTrack').style.transform='translateX(-'+(chrSlide*100)+'%)'; document.querySelectorAll('#chrDots .sdot').forEach((d,i)=>d.classList.toggle('active',i===chrSlide)); }
-  function changeChr(d){ chrSlide=(chrSlide+d+chrTotal)%chrTotal; updateChr(); resetChr(); }
-  function goToChr(n){ chrSlide=n; updateChr(); resetChr(); }
-  function resetChr(){ clearInterval(chrTimer); chrTimer=setInterval(()=>changeChr(1),6000); }
-  const chrt=document.getElementById('chrTrack');
-  if(chrt){ let cx=0; chrt.addEventListener('touchstart',e=>{cx=e.touches[0].clientX;},{passive:true}); chrt.addEventListener('touchend',e=>{const d=cx-e.changedTouches[0].clientX;if(Math.abs(d)>40)changeChr(d>0?1:-1);},{passive:true}); }
-  resetChr();
-
-
-  }
-
-  function resetAutoSlide() {
-    clearInterval(autoSlideTimer);
-    autoSlideTimer = setInterval(() => changeSlide(1), 3500);
-  }
-
-  // Touch/swipe support
-  let touchStartX = 0;
-  const track = document.getElementById('sliderTrack');
-  if (track) {
-    track.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, {passive:true});
-    track.addEventListener('touchend', e => {
-      const diff = touchStartX - e.changedTouches[0].clientX;
-      if (Math.abs(diff) > 40) changeSlide(diff > 0 ? 1 : -1);
-    }, {passive:true});
-  }
-
-  resetAutoSlide();
-
-  // CABLE SLIDER
-  let cSlide=0; const cTotal=4; let cTimer;
-  function updateCable(){ document.getElementById('cableTrack').style.transform='translateX(-'+(cSlide*100)+'%)'; document.querySelectorAll('#cableDots .sdot').forEach((d,i)=>d.classList.toggle('active',i===cSlide)); }
-  function changeCable(d){ cSlide=(cSlide+d+cTotal)%cTotal; updateCable(); resetCable(); }
-  function goToCable(n){ cSlide=n; updateCable(); resetCable(); }
-  function resetCable(){ clearInterval(cTimer); cTimer=setInterval(()=>changeCable(1),6000); }
-  const ct=document.getElementById('cableTrack');
-  if(ct){ let cx=0; ct.addEventListener('touchstart',e=>{cx=e.touches[0].clientX;},{passive:true}); ct.addEventListener('touchend',e=>{const d=cx-e.changedTouches[0].clientX;if(Math.abs(d)>40)changeCable(d>0?1:-1);},{passive:true}); }
-  resetCable();
-
-  // HEADPHONE SLIDER
-  let hSlide=0; const hTotal=5; let hTimer;
-  function updateHp(){ document.getElementById('hpTrack').style.transform='translateX(-'+(hSlide*100)+'%)'; document.querySelectorAll('#hpDots .sdot').forEach((d,i)=>d.classList.toggle('active',i===hSlide)); }
-  function changeHp(d){ hSlide=(hSlide+d+hTotal)%hTotal; updateHp(); resetHp(); }
-  function goToHp(n){ hSlide=n; updateHp(); resetHp(); }
-  function resetHp(){ clearInterval(hTimer); hTimer=setInterval(()=>changeHp(1),6000); }
-  const ht=document.getElementById('hpTrack');
-  if(ht){ let hx=0; ht.addEventListener('touchstart',e=>{hx=e.touches[0].clientX;},{passive:true}); ht.addEventListener('touchend',e=>{const d=hx-e.changedTouches[0].clientX;if(Math.abs(d)>40)changeHp(d>0?1:-1);},{passive:true}); }
-  resetHp();
-
-  // CHARGER SLIDER
-  let chrSlide=0; const chrTotal=3; let chrTimer;
-  function updateChr(){ document.getElementById('chrTrack').style.transform='translateX(-'+(chrSlide*100)+'%)'; document.querySelectorAll('#chrDots .sdot').forEach((d,i)=>d.classList.toggle('active',i===chrSlide)); }
-  function changeChr(d){ chrSlide=(chrSlide+d+chrTotal)%chrTotal; updateChr(); resetChr(); }
-  function goToChr(n){ chrSlide=n; updateChr(); resetChr(); }
-  function resetChr(){ clearInterval(chrTimer); chrTimer=setInterval(()=>changeChr(1),6000); }
-  const chrt=document.getElementById('chrTrack');
-  if(chrt){ let cx=0; chrt.addEventListener('touchstart',e=>{cx=e.touches[0].clientX;},{passive:true}); chrt.addEventListener('touchend',e=>{const d=cx-e.changedTouches[0].clientX;if(Math.abs(d)>40)changeChr(d>0?1:-1);},{passive:true}); }
-  resetChr();
-
-
-
+  function goToCable(n)  { cableSlider.goTo(n); }
+  function changeHp(d)   { d>0 ? hpSlider.next()    : hpSlider.prev(); }
+  function goToHp(n)     { hpSlider.goTo(n); }
+  function changeChr(d)  { d>0 ? chrSlider.next()   : chrSlider.prev(); }
+  function goToChr(n)    { chrSlider.goTo(n); }
 </script>
 </body>
 </html>
