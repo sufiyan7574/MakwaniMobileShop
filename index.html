@@ -504,69 +504,65 @@
   <div class="section-header reveal">
     <div class="section-tag">Data Cables</div>
     <h2 class="section-title">Fast Charging Cables — <span>Saste Mein!</span></h2>
-    <p class="section-desc">44W se 200W tak — Type-C, Micro USB, iPhone — sabhi type available. Tap karke photo dekho!</p>
+    <p class="section-desc">44W se 200W tak — Type-C, Micro USB, iPhone. Tap = photo badi ho jaati hai!</p>
   </div>
-
   <div style="text-align:center;margin-bottom:24px;">
-    <span class="cable-warranty-note">🛡️ 1 Year Warranty wale cables available — Quality Guaranteed!</span>
+    <span class="cable-warranty-note">🛡️ 1 Year Warranty wale cables available!</span>
   </div>
 
-  <!-- PREMIUM CABLES with photos -->
-  <div class="cable-grid reveal">
-    <div class="cable-card" onclick="openLB('https://i.ibb.co/BKQQ8sFB/IMG-20260603-WA0000.jpg')">
-      <img src="https://i.ibb.co/BKQQ8sFB/IMG-20260603-WA0000.jpg" alt="44W Fast Charging Cable" loading="lazy" />
-      <div class="cable-card-body">
-        <span class="cable-watt-badge">44W</span>
-        <h4>Super Fast Cable</h4>
-        <p>Type-C / Micro — durable braided</p>
-        <div class="cable-price-row">
-          <span class="cable-price">₹149</span>
-          <span class="cable-war war-1y">1 Yr Warranty</span>
+  <!-- CABLE SLIDER -->
+  <div class="slider-wrap reveal" style="max-width:500px;margin:0 auto 24px;">
+    <div class="slider-container">
+      <div class="slider-badge">🔌 Fast Charging</div>
+      <div class="slider-track" id="cableTrack">
+        <div class="slide" onclick="openLB('https://i.ibb.co/BKQQ8sFB/IMG-20260603-WA0000.jpg')">
+          <img src="https://i.ibb.co/BKQQ8sFB/IMG-20260603-WA0000.jpg" alt="44W Cable" loading="lazy" style="height:300px;object-fit:contain;background:#1a1a2e;cursor:zoom-in"/>
+          <div class="slide-caption" style="background:linear-gradient(transparent,rgba(0,0,0,.85))">
+            <div style="display:flex;justify-content:space-between;align-items:center">
+              <div><span style="background:var(--primary);padding:2px 10px;border-radius:50px;font-size:.8rem;font-weight:700">44W</span> &nbsp;Super Fast Cable<br><span style="font-size:.8rem;opacity:.8">Type-C / Micro — durable</span></div>
+              <div style="text-align:right"><span style="font-size:1.5rem;font-weight:800;color:var(--accent)">₹149</span><br><span style="font-size:.7rem;color:var(--accent2)">1 Yr Warranty</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="slide" onclick="openLB('https://i.ibb.co/GfGsthky/IMG-20260603-WA0001.jpg')">
+          <img src="https://i.ibb.co/GfGsthky/IMG-20260603-WA0001.jpg" alt="65W Cable" loading="lazy" style="height:300px;object-fit:contain;background:#1a1a2e;cursor:zoom-in"/>
+          <div class="slide-caption" style="background:linear-gradient(transparent,rgba(0,0,0,.85))">
+            <div style="display:flex;justify-content:space-between;align-items:center">
+              <div><span style="background:var(--primary);padding:2px 10px;border-radius:50px;font-size:.8rem;font-weight:700">65W</span> &nbsp;Turbo Charge<br><span style="font-size:.8rem;opacity:.8">Type-C premium copper</span></div>
+              <div style="text-align:right"><span style="font-size:1.5rem;font-weight:800;color:var(--accent)">₹179</span><br><span style="font-size:.7rem;color:var(--accent2)">1 Yr Warranty</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="slide" onclick="openLB('https://i.ibb.co/WpNX7nvB/IMG-20260603-WA0003.jpg')">
+          <img src="https://i.ibb.co/WpNX7nvB/IMG-20260603-WA0003.jpg" alt="120W Cable" loading="lazy" style="height:300px;object-fit:contain;background:#1a1a2e;cursor:zoom-in"/>
+          <div class="slide-caption" style="background:linear-gradient(transparent,rgba(0,0,0,.85))">
+            <div style="display:flex;justify-content:space-between;align-items:center">
+              <div><span style="background:var(--primary);padding:2px 10px;border-radius:50px;font-size:.8rem;font-weight:700">120W</span> &nbsp;Ultra Fast<br><span style="font-size:.8rem;opacity:.8">Silicone — heat proof</span></div>
+              <div style="text-align:right"><span style="font-size:1.5rem;font-weight:800;color:var(--accent)">₹199</span><br><span style="font-size:.7rem;color:var(--accent2)">1 Yr Warranty</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="slide" onclick="openLB('https://i.ibb.co/tPn91Ygf/IMG-20260603-WA0002.jpg')">
+          <img src="https://i.ibb.co/tPn91Ygf/IMG-20260603-WA0002.jpg" alt="200W Cable" loading="lazy" style="height:300px;object-fit:contain;background:#1a1a2e;cursor:zoom-in"/>
+          <div class="slide-caption" style="background:linear-gradient(transparent,rgba(0,0,0,.85))">
+            <div style="display:flex;justify-content:space-between;align-items:center">
+              <div><span style="background:var(--primary);padding:2px 10px;border-radius:50px;font-size:.8rem;font-weight:700">200W</span> &nbsp;Super Fast<br><span style="font-size:.8rem;opacity:.8">Heavy duty copper</span></div>
+              <div style="text-align:right"><span style="font-size:1.5rem;font-weight:800;color:var(--accent)">₹249</span><br><span style="font-size:.7rem;color:var(--accent2)">1 Yr Warranty</span></div>
+            </div>
+          </div>
         </div>
       </div>
+      <button class="slider-btn slider-prev" onclick="changeCable(-1)" aria-label="Prev">‹</button>
+      <button class="slider-btn slider-next" onclick="changeCable(1)" aria-label="Next">›</button>
     </div>
-    <div class="cable-card" onclick="openLB('https://i.ibb.co/GfGsthky/IMG-20260603-WA0001.jpg')">
-      <img src="https://i.ibb.co/GfGsthky/IMG-20260603-WA0001.jpg" alt="65W Turbo Charging Cable" loading="lazy" />
-      <div class="cable-card-body">
-        <span class="cable-watt-badge">65W</span>
-        <h4>Turbo Charge Cable</h4>
-        <p>Type-C — premium copper core</p>
-        <div class="cable-price-row">
-          <span class="cable-price">₹179</span>
-          <span class="cable-war war-1y">1 Yr Warranty</span>
-        </div>
-      </div>
-    </div>
-    <div class="cable-card" onclick="openLB('https://i.ibb.co/WpNX7nvB/IMG-20260603-WA0003.jpg')">
-      <img src="https://i.ibb.co/WpNX7nvB/IMG-20260603-WA0003.jpg" alt="120W Ultra Fast Cable" loading="lazy" />
-      <div class="cable-card-body">
-        <span class="cable-watt-badge">120W</span>
-        <h4>Ultra Fast Cable</h4>
-        <p>Premium silicone — heat proof</p>
-        <div class="cable-price-row">
-          <span class="cable-price">₹199</span>
-          <span class="cable-war war-1y">1 Yr Warranty</span>
-        </div>
-      </div>
-    </div>
-    <div class="cable-card" onclick="openLB('https://i.ibb.co/tPn91Ygf/IMG-20260603-WA0002.jpg')">
-      <img src="https://i.ibb.co/tPn91Ygf/IMG-20260603-WA0002.jpg" alt="200W Super Fast Cable" loading="lazy" />
-      <div class="cable-card-body">
-        <span class="cable-watt-badge">200W</span>
-        <h4>Super Fast Cable</h4>
-        <p>Type-C / Micro — heavy duty</p>
-        <div class="cable-price-row">
-          <span class="cable-price">₹249</span>
-          <span class="cable-war war-1y">1 Yr Warranty</span>
-        </div>
-      </div>
+    <div class="slider-dots" id="cableDots">
+      <button class="sdot active" onclick="goToCable(0)"></button>
+      <button class="sdot" onclick="goToCable(1)"></button>
+      <button class="sdot" onclick="goToCable(2)"></button>
+      <button class="sdot" onclick="goToCable(3)"></button>
     </div>
   </div>
 
-  <!-- BASIC CABLES -->
-  <div style="text-align:center;margin-bottom:16px;">
-    <p style="color:var(--text-muted);font-size:.9rem;margin-bottom:12px;">Budget cables bhi available hain:</p>
-  </div>
   <div class="cable-basic-row reveal">
     <div class="cable-basic-card">
       <div class="bp">₹30</div>
@@ -579,8 +575,7 @@
       <div style="font-size:.7rem;color:var(--accent2)">6 Month Warranty</div>
     </div>
   </div>
-
-  <div style="text-align:center;margin-top:8px;">
+  <div style="text-align:center;margin-top:20px;">
     <a href="https://wa.me/918600818634?text=Namaste!%20Mujhe%20data%20cable%20chahiye.%20Konsa%20available%20hai%3F" target="_blank" class="btn btn-wa">💬 Cable Order on WhatsApp</a>
   </div>
 </section>
@@ -590,6 +585,80 @@
   <button class="lb-close" onclick="closeLB()">✕</button>
   <img id="lbImg" src="" alt="Cable Photo" />
 </div>
+
+<!-- HEADPHONE SECTION -->
+<section style="background:var(--bg3);" id="headphones">
+  <div class="section-header reveal">
+    <div class="section-tag">Wired Headphones</div>
+    <h2 class="section-title">Headphones — <span>₹30 se Shuru!</span></h2>
+    <p class="section-desc">Sab wired headphones available — budget se premium tak. Tap karke bada dekho!</p>
+  </div>
+
+  <div class="slider-wrap reveal" style="max-width:500px;margin:0 auto 24px;">
+    <div class="slider-container">
+      <div class="slider-badge">🎧 Best Sound</div>
+      <div class="slider-track" id="hpTrack">
+        <div class="slide" onclick="openLB('https://i.ibb.co/nMwPy7xh/IMG-20260603-WA0004.jpg')">
+          <img src="https://i.ibb.co/nMwPy7xh/IMG-20260603-WA0004.jpg" alt="₹30 Basic Headphone" loading="lazy" style="height:320px;object-fit:contain;background:#1a1a2e;cursor:zoom-in"/>
+          <div class="slide-caption" style="background:linear-gradient(transparent,rgba(0,0,0,.85))">
+            <div style="display:flex;justify-content:space-between;align-items:center">
+              <div>🎧 Basic Wired Headphone<br><span style="font-size:.8rem;opacity:.8">Simple & Functional</span></div>
+              <div style="text-align:right"><span style="font-size:1.5rem;font-weight:800;color:var(--accent)">₹30</span><br><span style="font-size:.7rem;color:rgba(255,255,255,.6)">No Warranty</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="slide" onclick="openLB('https://i.ibb.co/fYx3VpMF/IMG-20260603-WA0005.jpg')">
+          <img src="https://i.ibb.co/fYx3VpMF/IMG-20260603-WA0005.jpg" alt="₹99 Headphone" loading="lazy" style="height:320px;object-fit:contain;background:#1a1a2e;cursor:zoom-in"/>
+          <div class="slide-caption" style="background:linear-gradient(transparent,rgba(0,0,0,.85))">
+            <div style="display:flex;justify-content:space-between;align-items:center">
+              <div>🎧 Value Headphone<br><span style="font-size:.8rem;opacity:.8">Better sound quality</span></div>
+              <div style="text-align:right"><span style="font-size:1.5rem;font-weight:800;color:var(--accent)">₹99</span><br><span style="font-size:.7rem;color:var(--accent2)">3 Month Warranty</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="slide" onclick="openLB('https://i.ibb.co/jkwZmpDK/IMG-20260603-WA0007.jpg')">
+          <img src="https://i.ibb.co/jkwZmpDK/IMG-20260603-WA0007.jpg" alt="₹149 Headphone" loading="lazy" style="height:320px;object-fit:contain;background:#1a1a2e;cursor:zoom-in"/>
+          <div class="slide-caption" style="background:linear-gradient(transparent,rgba(0,0,0,.85))">
+            <div style="display:flex;justify-content:space-between;align-items:center">
+              <div>🎧 Popular Pick<br><span style="font-size:.8rem;opacity:.8">Clear sound, comfortable fit</span></div>
+              <div style="text-align:right"><span style="font-size:1.5rem;font-weight:800;color:var(--accent)">₹149</span><br><span style="font-size:.7rem;color:var(--accent2)">6 Month Warranty</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="slide" onclick="openLB('https://i.ibb.co/Z1t3cdWW/IMG-20260603-WA0006.jpg')">
+          <img src="https://i.ibb.co/Z1t3cdWW/IMG-20260603-WA0006.jpg" alt="₹250 Headphone" loading="lazy" style="height:320px;object-fit:contain;background:#1a1a2e;cursor:zoom-in"/>
+          <div class="slide-caption" style="background:linear-gradient(transparent,rgba(0,0,0,.85))">
+            <div style="display:flex;justify-content:space-between;align-items:center">
+              <div>🎧 Premium Sound<br><span style="font-size:.8rem;opacity:.8">Deep bass, long cable</span></div>
+              <div style="text-align:right"><span style="font-size:1.5rem;font-weight:800;color:var(--accent)">₹250</span><br><span style="font-size:.7rem;color:var(--accent2)">6 Month Warranty</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="slide" onclick="openLB('https://i.ibb.co/YKTnfPR/IMG-20260603-WA0008.jpg')">
+          <img src="https://i.ibb.co/YKTnfPR/IMG-20260603-WA0008.jpg" alt="₹450 Headphone" loading="lazy" style="height:320px;object-fit:contain;background:#1a1a2e;cursor:zoom-in"/>
+          <div class="slide-caption" style="background:linear-gradient(transparent,rgba(0,0,0,.85))">
+            <div style="display:flex;justify-content:space-between;align-items:center">
+              <div>🎧 Best Quality<br><span style="font-size:.8rem;opacity:.8">Studio sound, premium build</span></div>
+              <div style="text-align:right"><span style="font-size:1.5rem;font-weight:800;color:var(--accent)">₹450</span><br><span style="font-size:.7rem;color:var(--accent2)">1 Year Warranty</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="slider-btn slider-prev" onclick="changeHp(-1)" aria-label="Prev">‹</button>
+      <button class="slider-btn slider-next" onclick="changeHp(1)" aria-label="Next">›</button>
+    </div>
+    <div class="slider-dots" id="hpDots">
+      <button class="sdot active" onclick="goToHp(0)"></button>
+      <button class="sdot" onclick="goToHp(1)"></button>
+      <button class="sdot" onclick="goToHp(2)"></button>
+      <button class="sdot" onclick="goToHp(3)"></button>
+      <button class="sdot" onclick="goToHp(4)"></button>
+    </div>
+  </div>
+  <div style="text-align:center;margin-top:8px;">
+    <a href="https://wa.me/918600818634?text=Namaste!%20Mujhe%20headphone%20chahiye.%20Konsa%20available%20hai%3F" target="_blank" class="btn btn-wa">💬 Headphone Order on WhatsApp</a>
+  </div>
+</section>
 
 <!-- SERVICES -->
 <section id="services">
@@ -996,7 +1065,7 @@
     <h3>30km Tak Free Delivery!</h3>
     <p>Ner Parsopant aur aas-paas ke 30km ke andar — ghar baithe order karo. WhatsApp pe photo share karo, confirm karo, aur delivery aa jaayegi!</p>
     <div class="delivery-badges">
-      <span class="del-badge">📍 Ner Parsopant — Free</span>
+      <span class="del-badge">📍 Ner Parsopant — Home Delivery!</span>
       <span class="del-badge green">🚚 30km Radius Delivery</span>
       <span class="del-badge">💬 WhatsApp pe Order</span>
       <span class="del-badge green">⚡ Same Day Possible</span>
@@ -1305,12 +1374,54 @@
     currentSlide = (currentSlide + dir + totalSlides) % totalSlides;
     updateSlider();
     resetAutoSlide();
+
+  // CABLE SLIDER
+  let cSlide=0; const cTotal=4; let cTimer;
+  function updateCable(){ document.getElementById('cableTrack').style.transform='translateX(-'+(cSlide*100)+'%)'; document.querySelectorAll('#cableDots .sdot').forEach((d,i)=>d.classList.toggle('active',i===cSlide)); }
+  function changeCable(d){ cSlide=(cSlide+d+cTotal)%cTotal; updateCable(); resetCable(); }
+  function goToCable(n){ cSlide=n; updateCable(); resetCable(); }
+  function resetCable(){ clearInterval(cTimer); cTimer=setInterval(()=>changeCable(1),4000); }
+  const ct=document.getElementById('cableTrack');
+  if(ct){ let cx=0; ct.addEventListener('touchstart',e=>{cx=e.touches[0].clientX;},{passive:true}); ct.addEventListener('touchend',e=>{const d=cx-e.changedTouches[0].clientX;if(Math.abs(d)>40)changeCable(d>0?1:-1);},{passive:true}); }
+  resetCable();
+
+  // HEADPHONE SLIDER
+  let hSlide=0; const hTotal=5; let hTimer;
+  function updateHp(){ document.getElementById('hpTrack').style.transform='translateX(-'+(hSlide*100)+'%)'; document.querySelectorAll('#hpDots .sdot').forEach((d,i)=>d.classList.toggle('active',i===hSlide)); }
+  function changeHp(d){ hSlide=(hSlide+d+hTotal)%hTotal; updateHp(); resetHp(); }
+  function goToHp(n){ hSlide=n; updateHp(); resetHp(); }
+  function resetHp(){ clearInterval(hTimer); hTimer=setInterval(()=>changeHp(1),4000); }
+  const ht=document.getElementById('hpTrack');
+  if(ht){ let hx=0; ht.addEventListener('touchstart',e=>{hx=e.touches[0].clientX;},{passive:true}); ht.addEventListener('touchend',e=>{const d=hx-e.changedTouches[0].clientX;if(Math.abs(d)>40)changeHp(d>0?1:-1);},{passive:true}); }
+  resetHp();
+
   }
 
   function goToSlide(n) {
     currentSlide = n;
     updateSlider();
     resetAutoSlide();
+
+  // CABLE SLIDER
+  let cSlide=0; const cTotal=4; let cTimer;
+  function updateCable(){ document.getElementById('cableTrack').style.transform='translateX(-'+(cSlide*100)+'%)'; document.querySelectorAll('#cableDots .sdot').forEach((d,i)=>d.classList.toggle('active',i===cSlide)); }
+  function changeCable(d){ cSlide=(cSlide+d+cTotal)%cTotal; updateCable(); resetCable(); }
+  function goToCable(n){ cSlide=n; updateCable(); resetCable(); }
+  function resetCable(){ clearInterval(cTimer); cTimer=setInterval(()=>changeCable(1),4000); }
+  const ct=document.getElementById('cableTrack');
+  if(ct){ let cx=0; ct.addEventListener('touchstart',e=>{cx=e.touches[0].clientX;},{passive:true}); ct.addEventListener('touchend',e=>{const d=cx-e.changedTouches[0].clientX;if(Math.abs(d)>40)changeCable(d>0?1:-1);},{passive:true}); }
+  resetCable();
+
+  // HEADPHONE SLIDER
+  let hSlide=0; const hTotal=5; let hTimer;
+  function updateHp(){ document.getElementById('hpTrack').style.transform='translateX(-'+(hSlide*100)+'%)'; document.querySelectorAll('#hpDots .sdot').forEach((d,i)=>d.classList.toggle('active',i===hSlide)); }
+  function changeHp(d){ hSlide=(hSlide+d+hTotal)%hTotal; updateHp(); resetHp(); }
+  function goToHp(n){ hSlide=n; updateHp(); resetHp(); }
+  function resetHp(){ clearInterval(hTimer); hTimer=setInterval(()=>changeHp(1),4000); }
+  const ht=document.getElementById('hpTrack');
+  if(ht){ let hx=0; ht.addEventListener('touchstart',e=>{hx=e.touches[0].clientX;},{passive:true}); ht.addEventListener('touchend',e=>{const d=hx-e.changedTouches[0].clientX;if(Math.abs(d)>40)changeHp(d>0?1:-1);},{passive:true}); }
+  resetHp();
+
   }
 
   function resetAutoSlide() {
@@ -1330,6 +1441,27 @@
   }
 
   resetAutoSlide();
+
+  // CABLE SLIDER
+  let cSlide=0; const cTotal=4; let cTimer;
+  function updateCable(){ document.getElementById('cableTrack').style.transform='translateX(-'+(cSlide*100)+'%)'; document.querySelectorAll('#cableDots .sdot').forEach((d,i)=>d.classList.toggle('active',i===cSlide)); }
+  function changeCable(d){ cSlide=(cSlide+d+cTotal)%cTotal; updateCable(); resetCable(); }
+  function goToCable(n){ cSlide=n; updateCable(); resetCable(); }
+  function resetCable(){ clearInterval(cTimer); cTimer=setInterval(()=>changeCable(1),4000); }
+  const ct=document.getElementById('cableTrack');
+  if(ct){ let cx=0; ct.addEventListener('touchstart',e=>{cx=e.touches[0].clientX;},{passive:true}); ct.addEventListener('touchend',e=>{const d=cx-e.changedTouches[0].clientX;if(Math.abs(d)>40)changeCable(d>0?1:-1);},{passive:true}); }
+  resetCable();
+
+  // HEADPHONE SLIDER
+  let hSlide=0; const hTotal=5; let hTimer;
+  function updateHp(){ document.getElementById('hpTrack').style.transform='translateX(-'+(hSlide*100)+'%)'; document.querySelectorAll('#hpDots .sdot').forEach((d,i)=>d.classList.toggle('active',i===hSlide)); }
+  function changeHp(d){ hSlide=(hSlide+d+hTotal)%hTotal; updateHp(); resetHp(); }
+  function goToHp(n){ hSlide=n; updateHp(); resetHp(); }
+  function resetHp(){ clearInterval(hTimer); hTimer=setInterval(()=>changeHp(1),4000); }
+  const ht=document.getElementById('hpTrack');
+  if(ht){ let hx=0; ht.addEventListener('touchstart',e=>{hx=e.touches[0].clientX;},{passive:true}); ht.addEventListener('touchend',e=>{const d=hx-e.changedTouches[0].clientX;if(Math.abs(d)>40)changeHp(d>0?1:-1);},{passive:true}); }
+  resetHp();
+
 
 </script>
 </body>
