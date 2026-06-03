@@ -1232,11 +1232,11 @@
 
     <div style="background:rgba(255,255,255,0.04);border-radius:18px;overflow:hidden;border:1px solid rgba(255,107,0,0.2);box-shadow:0 8px 32px rgba(255,107,0,0.15);">
       <div style="width:100%;height:320px;overflow:hidden;background:#0d0d1a;">
-        <img src="https://i.ibb.co/FMs7dw9/repair.jpg" alt="Adnan Makwani Expert Mobile Repairing" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;image-rendering:auto;" loading="eager" />
+        <img src="https://i.ibb.co/Fbk5nnfn/adnan-makwani-003-20230925-0001.jpg" alt="Adnan Makwani Expert Mobile Repairing" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;image-rendering:auto;" loading="eager" />
       </div>
       <div style="padding:18px;">
-        <h3 style="margin-bottom:8px;">🔧 Expert Repairing by Adnan Makwani</h3>
-        <p style="color:#bdbdd7;">Display, charging, software aur motherboard repairing — fast aur reliable service.</p>
+        <h3 style="margin-bottom:8px;">👨‍💼 Adnan Makwani — Owner & Expert</h3>
+        <p style="color:#bdbdd7;">Makwani Mobile Shop ke owner. 5+ saalon ka experience. Display, charging, software aur motherboard repairing — fast, reliable aur affordable. Aapka phone hamaare haathon mein safe hai!</p>
       </div>
     </div>
 
@@ -1412,52 +1412,53 @@
   updateCountdown();
   setInterval(updateCountdown,1000);
 
-  // IMAGE SLIDER
-  let currentSlide = 0;
-  const totalSlides = 5;
-  let autoSlideTimer;
+  // ══ SLIDER ENGINE (isolated per slider) ══
+  function makeSlider(trackId, dotsId, total, interval) {
+    let cur = 0, timer;
+    const track = document.getElementById(trackId);
+    const dotsEl = document.getElementById(dotsId);
+    if (!track) return;
 
-  function updateSlider() {
-    document.getElementById('sliderTrack').style.transform = 'translateX(-' + (currentSlide * 100) + '%)';
-    document.querySelectorAll('.sdot').forEach((d, i) => {
-      d.classList.toggle('active', i === currentSlide);
-    });
+    function update() {
+      track.style.transition = 'transform 0.45s cubic-bezier(0.4,0,0.2,1)';
+      track.style.transform = 'translateX(-' + (cur * 100) + '%)';
+      if (dotsEl) dotsEl.querySelectorAll('.sdot').forEach((d,i) => d.classList.toggle('active', i===cur));
+    }
+
+    function next() { cur = (cur + 1) % total; update(); }
+    function prev() { cur = (cur - 1 + total) % total; update(); }
+    function goTo(n) { cur = n; update(); resetTimer(); }
+    function resetTimer() { clearInterval(timer); timer = setInterval(next, interval); }
+
+    // Touch swipe
+    let tx = 0;
+    track.addEventListener('touchstart', e => { tx = e.touches[0].clientX; clearInterval(timer); }, {passive:true});
+    track.addEventListener('touchend', e => {
+      const diff = tx - e.changedTouches[0].clientX;
+      if (Math.abs(diff) > 40) { diff > 0 ? next() : prev(); }
+      resetTimer();
+    }, {passive:true});
+
+    resetTimer();
+    return { next, prev, goTo };
   }
 
-  function changeSlide(dir) {
-    currentSlide = (currentSlide + dir + totalSlides) % totalSlides;
-    updateSlider();
-    resetAutoSlide();
+  // Init all sliders
+  const lotSlider  = makeSlider('sliderTrack', 'sliderDots',  5, 4000);
+  const cableSlider = makeSlider('cableTrack',  'cableDots',   4, 6000);
+  const hpSlider   = makeSlider('hpTrack',     'hpDots',      5, 6000);
+  const chrSlider  = makeSlider('chrTrack',    'chrDots',     3, 6000);
 
-  // CABLE SLIDER
-  let cSlide=0; const cTotal=4; let cTimer;
-  function updateCable(){ document.getElementById('cableTrack').style.transform='translateX(-'+(cSlide*100)+'%)'; document.querySelectorAll('#cableDots .sdot').forEach((d,i)=>d.classList.toggle('active',i===cSlide)); }
-  function changeCable(d){ cSlide=(cSlide+d+cTotal)%cTotal; updateCable(); resetCable(); }
-  function goToCable(n){ cSlide=n; updateCable(); resetCable(); }
-  function resetCable(){ clearInterval(cTimer); cTimer=setInterval(()=>changeCable(1),6000); }
-  const ct=document.getElementById('cableTrack');
-  if(ct){ let cx=0; ct.addEventListener('touchstart',e=>{cx=e.touches[0].clientX;},{passive:true}); ct.addEventListener('touchend',e=>{const d=cx-e.changedTouches[0].clientX;if(Math.abs(d)>40)changeCable(d>0?1:-1);},{passive:true}); }
-  resetCable();
+  // Global functions for onclick buttons
+  function changeSlide(d){ d>0 ? lotSlider.next() : lotSlider.prev(); }
+  function goToSlide(n){ lotSlider.goTo(n); }
+  function changeCable(d){ d>0 ? cableSlider.next() : cableSlider.prev(); }
+  function goToCable(n){ cableSlider.goTo(n); }
+  function changeHp(d){ d>0 ? hpSlider.next() : hpSlider.prev(); }
+  function goToHp(n){ hpSlider.goTo(n); }
+  function changeChr(d){ d>0 ? chrSlider.next() : chrSlider.prev(); }
+  function goToChr(n){ chrSlider.goTo(n); }
 
-  // HEADPHONE SLIDER
-  let hSlide=0; const hTotal=5; let hTimer;
-  function updateHp(){ document.getElementById('hpTrack').style.transform='translateX(-'+(hSlide*100)+'%)'; document.querySelectorAll('#hpDots .sdot').forEach((d,i)=>d.classList.toggle('active',i===hSlide)); }
-  function changeHp(d){ hSlide=(hSlide+d+hTotal)%hTotal; updateHp(); resetHp(); }
-  function goToHp(n){ hSlide=n; updateHp(); resetHp(); }
-  function resetHp(){ clearInterval(hTimer); hTimer=setInterval(()=>changeHp(1),6000); }
-  const ht=document.getElementById('hpTrack');
-  if(ht){ let hx=0; ht.addEventListener('touchstart',e=>{hx=e.touches[0].clientX;},{passive:true}); ht.addEventListener('touchend',e=>{const d=hx-e.changedTouches[0].clientX;if(Math.abs(d)>40)changeHp(d>0?1:-1);},{passive:true}); }
-  resetHp();
-
-  // CHARGER SLIDER
-  let chrSlide=0; const chrTotal=3; let chrTimer;
-  function updateChr(){ document.getElementById('chrTrack').style.transform='translateX(-'+(chrSlide*100)+'%)'; document.querySelectorAll('#chrDots .sdot').forEach((d,i)=>d.classList.toggle('active',i===chrSlide)); }
-  function changeChr(d){ chrSlide=(chrSlide+d+chrTotal)%chrTotal; updateChr(); resetChr(); }
-  function goToChr(n){ chrSlide=n; updateChr(); resetChr(); }
-  function resetChr(){ clearInterval(chrTimer); chrTimer=setInterval(()=>changeChr(1),6000); }
-  const chrt=document.getElementById('chrTrack');
-  if(chrt){ let cx=0; chrt.addEventListener('touchstart',e=>{cx=e.touches[0].clientX;},{passive:true}); chrt.addEventListener('touchend',e=>{const d=cx-e.changedTouches[0].clientX;if(Math.abs(d)>40)changeChr(d>0?1:-1);},{passive:true}); }
-  resetChr();
 
 
   }
